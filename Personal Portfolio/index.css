@@ -1,0 +1,117 @@
+*{
+    
+    margin: 0;
+    padding: 0;
+    text-decoration: none; /*Removes annoying marker under hyperlinks*/
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+    /* background-size: cover;
+    background-position: center ; */
+}
+
+a
+{
+    color: white;
+}
+
+
+
+
+
+
+#main
+{
+    display: flex;
+    flex: 1;
+   
+    background-color: #f2f2f2;
+    border: 2px red dashed;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.header{
+    /* position: fixed; */
+    
+     width: 100%; /* Not actually needed but used for clarity, column */
+    padding: 15px 100px;
+    background: seagreen;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* align-items: center;
+    align-content: center; 
+     z-index: 100;  */
+}
+
+.contentbox
+{
+    display: flex;
+
+    border: 2px red dashed ;
+    width: 80%;
+    height: 80%;
+    
+}
+
+.navbar a{
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    margin-left: 40px; 
+    /* vet inte om det är rätt med margin left 40 px, kom ihåg att den viktigaste delen rubriken är h1, så yeahh */
+}
+
+
+
+#footer
+{
+    display: flex;
+    flex-direction: row;
+    width: 100%; /* viewport width, kanske ändrar sen beroende på responsive design duvet lol lmao */
+    padding: 15px 100px;
+    min-height: 15vh;
+    border: 2px red dashed;
+    justify-content: space-around;
+
+    background-color: black;
+}
+
+#footer article
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex: 0.2;
+    border: 2px red dashed;
+    
+}
+
+#footer article h3{
+    color: white;
+}
+
+#footer article h4
+{
+    color: white;
+    font-size: 16px;
+    padding: 10px 10px 0 0;
+}
+
+/* <a target="_blank" href="https://icons8.com/icon/6Fsj3rv2DCmG/twitterx">TwitterX</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */
+
+
+
+
+
+
