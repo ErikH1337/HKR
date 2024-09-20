@@ -1,0 +1,217 @@
+*{
+    
+    margin: 0;
+    padding: 0;
+    text-decoration: none; /*Removes annoying marker under hyperlinks*/
+    box-sizing: border-box;
+    font-family: monospace;
+    
+    list-style-type: none;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 150vh;
+
+
+    
+    
+    /* background-size: cover;
+    background-position: center ; */
+}
+
+
+
+
+/* navigation styling  */
+
+nav
+{
+    display: flex;
+    
+    color: #ffffff;
+    padding: 15px 140px;
+    background: rgb(124, 147, 195);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+   
+
+}
+
+nav ul
+{
+    display: flex;
+    flex: 0.4;
+    justify-content: space-around;
+    
+    
+
+    /* border: 1px red solid; */
+    padding: 8px;
+    
+    border-radius: 20px;
+    
+}
+
+nav ul li
+{
+    
+    font-size: 19px;
+    
+    
+}
+
+nav ul li a
+{
+    color: white;
+   
+    padding-left: 4px;
+    padding-right: 4px;
+    
+}
+
+.hovereffect:hover
+{
+    border-bottom: 1.5px #3498db solid;
+
+
+}
+
+
+
+/* Main styling */
+
+
+#main
+{
+    display: flex;
+    align-items: center;
+    background-color: rgb(85, 103, 156);
+    
+    flex-direction: column;
+    flex: 1;
+    border: 2px rgb(102, 52, 52) solid;
+    
+   
+}
+
+
+#contentbox
+{
+    display: flex;
+    flex-direction: column;
+    
+    border: 2px blue solid;
+    width: 85%;
+    height: 100%;
+}
+
+header
+{
+    display: block;
+    text-align: center;
+
+    margin: 5px;
+    border: 2px orange solid;
+    
+
+
+}
+
+
+header h1
+{
+    font-size: 4vw;
+    
+    color: rgb(26, 0, 194);
+}
+
+header p
+{
+    font-size: 1.2vw;
+}
+
+header img
+{
+    border-radius: 100px;
+}
+
+
+
+
+
+
+
+/* Footer Styling */
+
+
+
+#footer
+{
+    display: flex;
+    flex-direction: row;
+    
+   
+    
+    justify-content: center;
+
+    background-color: rgb(184, 176, 149);
+}
+
+#footer a
+{
+    color: rgb(30, 42, 94);
+}
+
+
+
+#footer article
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    
+    padding: 15px;
+
+    
+    
+}
+
+footer img
+{
+    height: 17px;
+    vertical-align: middle;
+}
+
+footer ul
+{
+    vertical-align: middle;
+    
+}
+
+footer ul li
+{
+    display: inline;
+    
+}
+
+
+
+
+
+
+
+
+
+/* <a target="_blank" href="https://icons8.com/icon/6Fsj3rv2DCmG/twitterx">TwitterX</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */
+
+
+
+
+
+

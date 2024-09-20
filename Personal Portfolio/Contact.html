@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erik Harr</title>
+    <title>Contact</title>
 
     <link rel="stylesheet" href="stylesheet.css">
-    <meta name="description" content="WRITE SOMETHING HERE LATER">
+    <link rel="stylesheet" href="Contact.css">
 </head>
 <body>
 
@@ -22,31 +22,45 @@
         </ul>
 
     </nav>
-<!-- nav kan ta upp hela width, medans i main så är hela innehållet centrerat och tar endast upp ca 75% av sidan -->
-<!-- Web safe fonts -->
+
     <main id="main">
-
-        <article id="contentbox"> 
-            <article>
-                <header>
-                    <h1>
-                        Whattup! <br> My name is Erik
-
-                    </h1>
-                    <p> Welcome to my personal portfolio! I am a young and passionate student at HKR, building cool websites and... stuff </p>
-                    <img src="pfp.jpg" alt="" height="200px" >
-
-                </header>
-
-                <!-- En "About me" sida kan det finnas en aside med en lista av saker jag gillar att göra, och brevid är det en article tag som säger något om mig lol. Så: <main> <article> </article> <aside> </aside></main> -->
-            </article>
-
-        <!-- Kolla i boken om vad main och article är förnågot det e viktigt tror jag lol. Kolla också hur vissa webbsidor ser ut och vilka a taggar jag ska ha och hur de ser ut på andras hemsidor  -->
- 
-        </div>
         
-    </main>
 
+
+        <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+        
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+        
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject"><br><br>
+        
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="5" cols="40" ></textarea><br><br>
+        
+            <input type="submit" value="Send">
+        </form>
+
+        <form action="mailto:eriik.harr@gmail.com" method="post" enctype="text/plain"> <!--post eller get method? -->
+            <h2>Get in touch</h2>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your name..." ><br><br>
+        
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" placeholder="You@mail.com"><br><br>
+        
+        
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="5" cols="40" placeholder="Please write your message here..." required></textarea><br><br>
+        
+            <input type="submit" value="Send">
+        </form>
+        
+        <!-- Jag vill kanske implementera att placeholder texten går bort en i taget medans man skriver, men det r typ endast bra för personnummer idk  -->
+
+    </main>
 
     <footer id="footer">
         <article>
