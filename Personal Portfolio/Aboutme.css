@@ -1,0 +1,128 @@
+#Aboutheader
+{
+    display: flex;
+    
+    
+
+    color: white;
+
+    
+    
+}
+
+#Aboutheader-text
+{
+    border: 2px red dashed;
+    text-align: center;
+    
+}
+
+#Aboutheader-text h1
+{
+    font-size: 4vw;
+}
+
+#Aboutheader-text p
+{
+    color: black;
+    font-size: 1.2vw;
+}
+
+
+
+
+#Aboutheader-imagecontainer
+{
+    border: 2px blue dashed;
+    width: 40%;
+
+    text-align: end;
+    
+}
+
+#Aboutheader img
+{
+    width: 100%;
+    border-radius: 100%;
+    
+}
+
+
+
+
+
+#gallary
+{
+    text-align: center;
+    width: 90%;
+    
+
+    align-self: center;
+    color: white;
+
+    padding:0 15px 15px 15px;
+    background-color: #21305a;
+    border-radius: 10px;
+}
+
+#gallary h2
+{
+    font-size: 30px;
+}
+
+
+#gallary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 1.5rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+
+
+    
+}
+
+.gallary-item {
+    position: relative; /* Important for positioning the description */
+    overflow: hidden;
+    border-radius: 10px;
+
+    
+}
+
+.gallary-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+
+    object-fit: cover;
+    
+}
+
+.gallary-item:hover img {
+    transform: scale(1.1); /* Zoom effect on hover */
+
+    border-radius: 10px;
+}
+
+.description {
+    position: absolute; 
+    
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease-in-out;
+    font-size: 1em;
+}
+
+.gallary-item:hover .description {
+    opacity: 1; /* Show the description on hover */
+}
+
+

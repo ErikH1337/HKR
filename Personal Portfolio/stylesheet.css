@@ -27,77 +27,59 @@ body{
 
 /* navigation styling  */
 
-nav
-{
-    display: flex;
-    
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
     color: #ffffff;
     padding: 15px 140px;
     background: rgb(124, 147, 195);
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-   
-
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
 }
 
-nav ul
-{
+nav ul {
     display: flex;
     flex: 0.4;
     justify-content: space-around;
-    
-    
-
-    /* border: 1px red solid; */
     padding: 8px;
-    
     border-radius: 20px;
-    
 }
 
-nav ul li
-{
-    
+nav ul li {
     font-size: 19px;
-    
-    
 }
 
-nav ul li a
-{
+nav ul li a {
     color: white;
-   
     padding-left: 4px;
     padding-right: 4px;
-    
 }
 
-.hovereffect:hover
-{
+.hovereffect:hover {
     border-bottom: 1.5px #3498db solid;
-
-
 }
+
 
 
 
 /* Main styling */
 
 
-#main
-{
+#main {
+    padding-top: 68px; /* Adjust this value depending on the height of your nav */
     display: flex;
     align-items: center;
     background-color: rgb(85, 103, 156);
-    
     flex-direction: column;
     flex: 1;
     border: 2px rgb(102, 52, 52) solid;
-    
-   
 }
+
 
 
 #contentbox
@@ -110,35 +92,9 @@ nav ul li a
     height: 100%;
 }
 
-header
-{
-    display: block;
-    text-align: center;
-
-    margin: 5px;
-    border: 2px orange solid;
-    
 
 
-}
 
-
-header h1
-{
-    font-size: 4vw;
-    
-    color: rgb(26, 0, 194);
-}
-
-header p
-{
-    font-size: 1.2vw;
-}
-
-header img
-{
-    border-radius: 100px;
-}
 
 
 
@@ -150,15 +106,10 @@ header img
 
 
 
-#footer
-{
+#footer {
     display: flex;
-    flex-direction: row;
-    
-   
-    
-    justify-content: center;
-
+    justify-content: center; /* Center articles horizontally */
+    align-items: center;     /* Align articles vertically */
     background-color: rgb(184, 176, 149);
 }
 
@@ -169,18 +120,24 @@ header img
 
 
 
-#footer article
-{
+#footer article {
+    flex: 1; /* Make both articles take equal space */
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-start; /* Left-align content in articles */
     justify-content: space-around;
-    
     padding: 15px;
-
-    
-    
 }
+
+#footer article:first-child {
+    align-items: flex-end; /* Align the left article to the right */
+}
+
+#footer article:last-child {
+    align-items: flex-start; /* Align the right article to the left */
+}
+
+
 
 footer img
 {
