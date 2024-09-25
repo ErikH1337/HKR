@@ -2,8 +2,9 @@
 {
     display: flex;
     
+    border: 2px red dashed;
     
-
+    
     color: white;
 
     
@@ -12,31 +13,33 @@
 
 #Aboutheader-text
 {
-    border: 2px red dashed;
     text-align: center;
-    
+    width: 80%;
 }
+
 
 #Aboutheader-text h1
 {
-    font-size: 4vw;
+    font-size: 4rem;
+   
 }
 
 #Aboutheader-text p
 {
     color: black;
-    font-size: 1.2vw;
+    font-size: 1.4rem;
+    
 }
-
-
 
 
 #Aboutheader-imagecontainer
 {
+    vertical-align: center;
     border: 2px blue dashed;
-    width: 40%;
-
-    text-align: end;
+    width: 30%;
+    
+    
+   
     
 }
 
@@ -54,8 +57,7 @@
 #gallary
 {
     text-align: center;
-    width: 90%;
-    
+    width: 70%;
 
     align-self: center;
     color: white;
@@ -126,3 +128,20 @@
 }
 
 
+@media (max-width: 768px) {
+    #Aboutheader {
+        flex-direction: column; /* Stack image and text vertically */
+        text-align: center; /* Center-align the text and image */
+    }
+
+    #Aboutheader-text
+    {
+        width: 100%;
+    }
+
+    #Aboutheader-imagecontainer {
+        width: 50%; /* Adjust image size on smaller screens */
+        margin-top: 10px; /* Add space between text and image */
+        align-self: center;
+    }
+}
