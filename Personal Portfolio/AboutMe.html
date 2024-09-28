@@ -12,17 +12,31 @@
 
     <div class="grid-container">
         <nav>
-            <h2> Erik H</h2>
-
+            <h2> Erik <span class="dissapeartext">H</span></h2>
+    
             <ul>
                 
                 <li><a href="Home.html" class="hovereffect">Home </a></li> <!-- välkommande sida där jag kan introducera mig själv -->
-                <li><a href="AboutMe.html" class="hovereffect">About Me</a></li> <!-- hobbies och vad jag gillar att göra -->
+                <li><a href="AboutMe.html" class="hovereffect">About <span class="dissapeartext">Me</span></a></li> <!-- hobbies och vad jag gillar att göra -->
                 <li><a href="Projects.html" class="hovereffect">Projects</a></li> <!-- Image gallary, achivements, bilder på vänsta sidan medans det är text som beskriver vad jag gör osv-->
                 <li><a href="Contact.html" class="hovereffect">Contact</a></li> <!-- Här ska contact form vara -->
             </ul>
         </nav>
+                    <!-- 
+                        
 
+                        CSS-doesnt support clikc based toggeling very well 
+                    
+                        gallary ska kanske vara section och article 
+
+                        color scheme, dark mode? kolla schema 
+
+                        h1, h2, h3
+                        Text size borde vara standard 
+
+                        Ändra textfärg 
+
+                    -->
         <main id="main">
             <div id="contentbox">
         
@@ -37,103 +51,66 @@
                         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, quo!</p>
                     </div>
 
-                    <div id="Aboutheader-imagecontainer">
-                        <img src="pfp.jpg" alt="" width="100px">
-                    </div>
+
                 </header>
 
                 <section id="gallary">
-
-                    <!-- Gallary css is contained within "Projects.css"
-                        Gallary bilderna ska ha text som kommer upp när man hoverar över det, om det går 
-                        
-                        Gym, djur, spel, vänner, flickvän, 
-
-                        CSS-doesnt support clikc based toggeling very well 
-                    
-                    -->
-
                     <h2>Some images of me doing stuff</h2>
-                    <p>Hover over desired image to show descriptiontext</p>
+                    <p>Hover over desired image to show description text</p>
                     <div id="gallary-grid">  
-
-                        <div class="gallary-item"> 
-                            <img src="Images/catplaceholder.jpg" alt="" >
+                        <article class="gallary-item"> 
+                            <img src="Images/watererik.jpg" alt="">
                             <div class="description">
-                                
+                                Me posing in the waters of Vombsjön 
                             </div>  
-                        </div>
-
-                        <div class="gallary-item"> 
-                            <img src="Images/chilltrees.jpg" alt="" >
+                        </article>
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/chilltrees.jpg" alt="">
                             <div class="description">
-                                
+                                The trees beside vombsjön
                             </div>
-
-                        </div>
-
-                        <div class="gallary-item"> 
-                            <img src="Images/cutecat.jpg" alt="" >
+                        </article>
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/cutecat.jpg" alt="">
+                            <div class="description">Cute local cat that we call Bibbles</div>
+                        </article>
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/gfcat.jpg" alt="">
                             <div class="description">
-                                
+                                My girlfriend holding Bibbles
                             </div>
-
-                        </div>
-
-
-                        <div class="gallary-item"> 
-                            <img src="Images/goat.jpg" alt="" >
-                            <div class="description">
-                                
-                            </div>
-
-                        </div>
-
-                        <div class="gallary-item"> 
-                            <img src="Images/watererik.jpg" alt="" >
-                            <div class="description">
-                                
-                            </div>
-
-                        </div>
-
-                        <div class="gallary-item"> 
-                            <img src="Images/food.jpg" alt="" >
-                            <div class="description">
-                                
-                            </div>
-
-                        </div>
-
-
-                        <div class="gallary-item"> 
-                            <img src="Images/gfcat.jpg" alt="" >
-                            <div class="description">
-                                
-                            </div>
-
-                        </div>
-
-                        <div class="gallary-item"> 
-                            <img src="Images/catplaceholder.jpg" alt="" >
-                            <div class="description">
-                                
-                            </div>
-
-                        </div>
-
-                        <div class="gallary-item"> 
-                            <img src="Images/catplaceholder.jpg" alt="" >
-                            <div class="description">
-                                
-                            </div>
-
-                        </div>
+                        </article>
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/catplaceholder.jpg" alt="">
+                            <div class="description"></div>
+                        </article>
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/catplaceholder.jpg" alt="">
+                            <div class="description"></div>
+                        </article>
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/goat.jpg" alt="">
+                            <div class="description">Skrylle nature reserve and a goat</div>
+                        </article>
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/catplaceholder.jpg" alt="">
+                            <div class="description"></div>
+                        </article>
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/catplaceholder.jpg" alt="">
+                            <div class="description"></div>
+                        </article>
                     </div>
-
-                    <aside></aside>
-
                 </section>
+                
                 
             </div>
         </main>

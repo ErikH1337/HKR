@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Contact - Erik Harr</title>
 
     <link rel="stylesheet" href="Styling/stylesheet.css">
     <link rel="stylesheet" href="Styling/Contact.css">
@@ -11,12 +11,12 @@
 <body>
     <div class="grid-container">
         <nav>
-            <h2> Erik H</h2>
-
+            <h2> Erik <span class="dissapeartext">H</span></h2>
+    
             <ul>
                 
                 <li><a href="Home.html" class="hovereffect">Home </a></li> <!-- välkommande sida där jag kan introducera mig själv -->
-                <li><a href="AboutMe.html" class="hovereffect">About Me</a></li> <!-- hobbies och vad jag gillar att göra -->
+                <li><a href="AboutMe.html" class="hovereffect">About <span class="dissapeartext">Me</span></a></li> <!-- hobbies och vad jag gillar att göra -->
                 <li><a href="Projects.html" class="hovereffect">Projects</a></li> <!-- Image gallary, achivements, bilder på vänsta sidan medans det är text som beskriver vad jag gör osv-->
                 <li><a href="Contact.html" class="hovereffect">Contact</a></li> <!-- Här ska contact form vara -->
             </ul>
@@ -31,19 +31,29 @@
             <form action="mailto:eriik.harr@gmail.com" method="post" enctype="text/plain"> <!--post eller get method? -->
                 <h2>Get in touch</h2>
                 <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" placeholder="Your Name..." ><br><br>
-            
+                <input type="text" 
+                id="name" 
+                name="name" 
+                placeholder="Your full name..." 
+                required 
+                minlength="2" 
+                maxlength="50" 
+                pattern="[A-Za-zåäöÅÄÖ\s]++" 
+                >  
+                <br><br>
                 <label for="email">Your Email:</label>
                 <input type="email" id="email" name="email" placeholder="Your.email@mail.com"><br><br>
             
             
                 <label for="message">Message:</label><br>
                 <textarea id="message" name="message" rows="5" cols="40" placeholder="Please write your message here..." required></textarea><br><br>
-            
+
                 <input type="submit" value="Send">
             </form>
             
-            <!-- Jag vill kanske implementera att placeholder texten går bort en i taget medans man skriver, men det r typ endast bra för personnummer idk  -->
+            <!-- Jag vill kanske implementera att placeholder texten går bort en i taget medans man skriver, men det r typ endast bra för personnummer idk 
+                Max width till texarea u know 
+            -->
 
         </main>
 

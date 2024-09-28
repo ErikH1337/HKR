@@ -1,7 +1,7 @@
 #Aboutheader
 {
     display: flex;
-    
+    justify-content: center;
     border: 2px red dashed;
     
     
@@ -32,16 +32,7 @@
 }
 
 
-#Aboutheader-imagecontainer
-{
-    vertical-align: center;
-    border: 2px blue dashed;
-    width: 30%;
-    
-    
-   
-    
-}
+
 
 #Aboutheader img
 {
@@ -63,7 +54,7 @@
     color: white;
 
     padding:0 15px 15px 15px;
-    background-color: #21305a;
+    background: linear-gradient(157deg, rgba(171,171,171,1) 0%, rgba(28,79,89,1) 59%);
     border-radius: 10px;
 }
 
@@ -74,28 +65,30 @@
 
 
 #gallary-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    display: flex;
+    justify-content: center;
     gap: 1.5rem;
     margin: 0 auto;
     max-width: 1200px;
     width: 100%;
-
+    flex-wrap: wrap;
 
     
 }
 
 .gallary-item {
+    flex: 1 1 calc(30.33% - 1.5rem);
     position: relative; /* Important for positioning the description */
     overflow: hidden;
     border-radius: 10px;
+    box-sizing: border-box;
 
     
+   
 }
 
 .gallary-item img {
     width: 100%;
-    height: auto;
     transition: transform 0.3s ease-in-out;
 
     object-fit: cover;
@@ -143,5 +136,17 @@
         width: 50%; /* Adjust image size on smaller screens */
         margin-top: 10px; /* Add space between text and image */
         align-self: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallary-item {
+        flex: 1 1 calc(50% - 1.5rem); /* Switch to two columns on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallary-item {
+        flex: 1 1 calc(100% - 1.5rem); /* Switch to one column on small screens */
     }
 }

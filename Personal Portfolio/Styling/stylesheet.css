@@ -4,24 +4,29 @@
     padding: 0;
     text-decoration: none; /*Removes annoying marker under hyperlinks*/
     box-sizing: border-box;
-    font-family: monospace;
-    
-    list-style-type: none;
+    font-family: monospace, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  /* ADD webbsafe font */
+    list-style-type: none;  /* removes  */
 }
 
-body{
-    display: flex;
-    flex-direction: column;
-    
-    /* background color */
-    
-
-
-    
-    
-    /* background-size: cover;
-    background-position: center ; */
+h1
+{
+    font-size: clamp(2.5rem, 5vw, 4rem); /* Adjusts between 2.5rem to 4rem */
 }
+
+h2
+{
+    font-size: clamp(1.5rem, 3vw, 1.875rem); /* Adjusts between 1.5rem to 1.875rem */}
+
+h3
+{
+    font-size: clamp(1.25rem, 2.5vw, 1.45rem); /* Adjusts between 1.25rem to 1.45rem */}
+
+p
+{
+    color: black;
+    font-size: clamp(1rem, 2.5vw, 1.2rem); /* Adjusts between 1rem to 1.2rem */    
+}
+
 
 .grid-container {
     display: grid;
@@ -31,22 +36,25 @@ body{
 }
 
 /* Navigation styling */
+/* Navbar styling */
 nav {
-    grid-row: 1; /* Set nav to the first row */
+    grid-row: 1;
     position: fixed;
     width: 100%;
-    background: rgb(124, 147, 195);
+    background: rgb(225, 218, 218);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    
+    /* Set a minimum height */
+    min-height: 65px; /* Ensure nav doesn't shrink below a certain height */
 }
 
+
 nav h2 {
-    font-size: 3rem;
-    
+    font-size: clamp(0.9rem, 4vw, 1.875rem); /* Keeps the text between 1.5rem and 3rem while scaling with viewport */
 }
 
 nav ul {
@@ -58,13 +66,17 @@ nav ul {
 
 nav a
 {
-    color: black;
+    color: rgb(51, 51, 51);
+}
+
+.nav-currentpage
+{
+    color: rgb(192, 166, 132);
 }
 
 nav ul li {
     
-    font-size: 1.5rem;
-    padding: 8px;
+    font-size: clamp(1.125rem, 3vw, 1.5rem); /* Adjusts between 1.125rem to 1.5rem */    padding: 8px 8px 8px 30px;
 }
 
 .hovereffect:hover {
@@ -81,7 +93,7 @@ nav ul li {
 
 #main {
     grid-row: 2; /* Set main content to the second row */
-    background-color: rgb(85, 103, 156);
+    background-color: rgb(171, 171, 171);
     
     display: flex;
     flex: 1;
@@ -98,8 +110,8 @@ nav ul li {
 {
     display: flex;
     flex-direction: column;
-    
-    border: 2px blue solid;
+    color: rgb(51, 51, 51);
+    border: 2px rgb(157, 157, 247) solid;
     width: 85%;
     height: 100%;
     align-self: center;
@@ -173,7 +185,7 @@ footer ul li
 
 
 
-@media (max-width:560px)
+@media (max-width:610px)
 {
     footer ul li
     {
@@ -181,14 +193,6 @@ footer ul li
     }
 }
 
-@media (max-width: 510px)
-{
-    .dissapeartext
-    {
-        display: none;
-        border: 2px red dashed;
-    }
-}
 
 
 

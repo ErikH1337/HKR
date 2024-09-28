@@ -1,0 +1,54 @@
+#home-header
+{
+    display: block;
+    text-align: center;
+}
+
+#home-header img
+{
+    border-radius: 40%;
+}
+
+
+#introduction
+{
+    display: block;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    align-self: center;
+    background: rgb(225, 218, 218)
+}
+
+#introduction article   
+{
+    padding: 10px;
+    
+    border-radius: 20px;
+}
+
+#introduction button
+{
+    padding: 10px;
+    font-size: clamp(1rem, 2.5vw, 1.2rem); /* Adjusts between 1rem to 1.2rem */
+    
+    border-radius: 12px;
+    border: none;
+}
+
+#introduction button:hover
+{
+   
+    transition: linear 0.2s;
+    cursor: pointer;
+}
+
+#introduction img
+{
+    width: 1rem;
+    vertical-align: sub;
+    
+}
+
+

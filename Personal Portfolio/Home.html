@@ -3,74 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erik Harr</title>
+    <title>Home - Erik Harr</title>
 
     <link rel="stylesheet" href="Styling/stylesheet.css">
+    <link rel="stylesheet" href="Styling/Home.css">
     <meta name="description" content="WRITE SOMETHING HERE LATER">
 </head>
 <body>
+    <div class="grid-container">
+        <nav>
+            <h2> Erik H</h2>
+    
+            <ul>
+                
+                <li><a href="Home.html" class="hovereffect nav-currentpage">HOME</a></li> 
+                <li><a href="AboutMe.html" class="hovereffect">ABOUT ME</a></li> 
+                <li><a href="Projects.html" class="hovereffect">PROJECTS</a></li> 
+                <li><a href="Contact.html" class="hovereffect">CONTACT</a></li> 
+            </ul>
+        </nav>
+    <!-- Web safe fonts -->
+    <!-- kebabcase -->
 
-    <nav>
-        <h2> Erik H</h2>
+        <main id="main">
 
-        <ul>
-            
-            <li><a href="Home.html" class="hovereffect">Home </a></li> <!-- välkommande sida där jag kan introducera mig själv -->
-            <li><a href="AboutMe.html" class="hovereffect">About Me</a></li> <!-- hobbies och vad jag gillar att göra -->
-            <li><a href="Projects.html" class="hovereffect">Projects</a></li> <!-- Image gallary, achivements, bilder på vänsta sidan medans det är text som beskriver vad jag gör osv-->
-            <li><a href="Contact.html" class="hovereffect">Contact</a></li> <!-- Här ska contact form vara -->
-        </ul>
-    </nav>
-<!-- nav kan ta upp hela width, medans i main så är hela innehållet centrerat och tar endast upp ca 75% av sidan -->
-<!-- Web safe fonts -->
-    <main id="main">
+            <div id="contentbox"> 
 
-        <article id="contentbox"> 
-            <article>
-                <header>
-                    <h1>
-                        Whattup! <br> My name is Erik
-
-                    </h1>
-                    <p> Welcome to my personal portfolio! I am a young and passionate student at HKR, building cool websites and... stuff </p>
-                    <img src="Images/pfp.jpg" alt="" height="200px" >
+                <header id="home-header">
+                    <h1>Whattup! <br> My name is Erik</h1>
+                    
+                        <p>Welcome to my personal portfolio! I am a young and somewhat passionate student at HKR, building websites and... stuff.</p>
+                   
+                    <img src="Images/pfp.jpg" alt="Profile picture" height="200px">
 
                 </header>
+                
+                <section id="introduction">
+                    <h2>The different pages to this site:</h2>
+                    <br>
+                    <article>
+                        <h3>ABOUT ME</h3>
+                        <p>Learn about my uninteresting life</p>
+                        <br>
+                        <a href="AboutMe.html"><button>Learn more about me <img src="Images/right-arrow-7359.svg" alt="Arrow image"></button></a>
+                    </article>
+                    <br>
+                    <article>
+                        <h3>PROJECTS</h3>
+                        <p>I dont know what i should have here  //fråga läraren</p>
+                        <br>
+                        <a href="Projects.html"><button>See projects <img src="Images/right-arrow-7359.svg" alt="Arrow image"></button></a>
 
-                <!-- En "About me" sida kan det finnas en aside med en lista av saker jag gillar att göra, och brevid är det en article tag som säger något om mig lol. Så: <main> <article> </article> <aside> </aside></main> -->
+                    </article>
+                    <br>
+                    <article>
+                        <h3>CONTACT</h3>
+                        <p>Here you can contact me through email using your full name and email</p>
+                        <br>
+                        <a href="Contact.html"><button>Contact me <img src="Images/right-arrow-7359.svg" alt="Arrow image"></button></a>
+
+                    </article>
+                    
+                    
+                </section>
+
+                
+                
+
+    
+            </div>
+            
+        </main>
+
+
+        <footer id="footer">
+
+            <article>
+
+                Date published
             </article>
 
-        <!-- Kolla i boken om vad main och article är förnågot det e viktigt tror jag lol. Kolla också hur vissa webbsidor ser ut och vilka a taggar jag ska ha och hur de ser ut på andras hemsidor  -->
- 
-        </div>
-        
-    </main>
+
+            <article>
+                <div> 
+                    <h3>My Social Media</h3>
+                    <ul>
+                        <li><img src="Images/icons8-twitterx-16.svg" alt="image "><a href="https://x.com/meNemJeff1337" class="hovereffect">Twitter</a></li>
+                        <li><img src="Images/instagram-logo-8869.svg" alt="image" height="10px"><a href="https://www.instagram.com/erik_harr_1337/" class="hovereffect">instagram</a></li>
+                        <li><img src="Images/facebook-logo-2428.svg" alt=""><a href="https://www.facebook.com/HarrErik?locale=sv_SE" class="hovereffect">Facebook</a></li>
+                        <li><img src="Images/github-logo-6532.svg" alt=""><a href="https://github.com/ErikH1337" class="hovereffect">Github</a></li>
+                    </ul>
+                </div>
+            </article>
 
 
-    <footer id="footer">
-        <article>
-            <div> 
-                <h2>My Social Media</h2>
+            <article>
+                <h3> Navigate this site</h3>
                 <ul>
-                    <li><img src="Images/icons8-twitterx-16.svg" alt="image "><a href="https://x.com/meNemJeff1337" class="hovereffect">Twitter</a></li>
-                    <li><img src="Images/instagram-logo-8869.svg" alt="image" height="10px"><a href="https://www.instagram.com/erik_harr_1337/" class="hovereffect">instagram</a></li>
-                    <li><img src="Images/facebook-logo-2428.svg" alt=""><a href="https://www.facebook.com/HarrErik?locale=sv_SE" class="hovereffect">Facebook</a></li>
-                    <li><img src="Images/github-logo-6532.svg" alt=""><a href="https://github.com/ErikH1337" class="hovereffect">Github</a></li>
+                    <li><a href="Home.html" class="hovereffect">Home</a></li>
+                    <li><a href="#" class="hovereffect">About</a></li>
+                    <li><a href="Projects.html" class="hovereffect">Projects</a></li>
+                    <li><a href="#" class="hovereffect">Contact</a></li>
                 </ul>
-            </div>
-        </article>
-
-
-        <article>
-            <h2> Navigate this site</h2>
-            <ul>
-                <li><a href="Home.html" class="hovereffect">Home</a></li>
-                <li><a href="#" class="hovereffect">About</a></li>
-                <li><a href="Projects.html" class="hovereffect">Projects</a></li>
-                <li><a href="#" class="hovereffect">Contact</a></li>
-            </ul>
-        </article>
-    </footer>
-    
+            </article>
+        </footer>
+    </div>
 </body>
 </html>
