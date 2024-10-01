@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallary</title>
+
+    <style>
+        *{
+    
+    margin: 0;
+    padding: 0;
+    text-decoration: none; /*Removes annoying marker under hyperlinks*/
+    box-sizing: border-box;
+    font-family: monospace, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  /* ADD webbsafe font */
+    list-style-type: none;  /* removes  */
+}
+
+h1
+{
+    font-size: clamp(2.5rem, 5vw, 4rem); /* Adjusts between 2.5rem to 4rem */
+}
+
+h2
+{
+    font-size: clamp(1.5rem, 3vw, 1.875rem); /* Adjusts between 1.5rem to 1.875rem */}
+
+h3
+{
+    font-size: clamp(1.25rem, 2.5vw, 1.45rem); /* Adjusts between 1.25rem to 1.45rem */}
+
+p
+{
+    color: black;
+    font-size: clamp(1rem, 2.5vw, 1.2rem); /* Adjusts between 1rem to 1.2rem */    
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto; /* Nav, Main, Footer */
+    min-height: 100vh;
+}
+
+
+/* Navbar styling */
+nav {
+    grid-row: 1;
+    position: fixed;
+    width: 100%;
+    background: rgb(225, 218, 218);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    z-index: 9999;
+    
+    /* Set a minimum height */
+    min-height: 65px; /* Ensure nav doesn't shrink below a certain height */
+}
+
+
+nav ul {
+    justify-content: flex-end;
+}
+
+nav a
+{
+    color: rgb(51, 51, 51);
+}
+
+.nav-currentpage
+{
+    color: rgb(192, 166, 132);
+}
+
+nav ul li {
+    
+    font-size: clamp(1.125rem, 3vw, 1.5rem); /* Adjusts between 1.125rem to 1.5rem */    padding: 8px 8px 8px 30px;
+}
+
+.hovereffect:hover {
+    border-bottom: 1.5px #3498db solid;
+}
+
+/* Hamburger menu */
+
+.ham-menu {
+    display: none; /* Hide on larger screens */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 35px;
+    height: 30px;
+    cursor: pointer;
+
+    margin-right: 20px;
+}
+
+.ham-menu span {
+    width: 100%;
+    height: 4px;
+    background-color: rgb(51, 51, 51);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.ham-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Navigation menu hidden by default on mobile */
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 65px; /* Below the navbar */
+    left: 0;
+    width: 100%;
+    background-color: rgb(225, 218, 218);
+    z-index: 9999;
+}
+
+.nav-links.active li {
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+/* Main styling */
+
+
+
+
+#main {
+    grid-row: 2; /* Set main content to the second row */
+    background-color: rgb(171, 171, 171);
+    
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 65px;
+
+    
+}
+
+
+
+#contentbox
+{
+    display: flex;
+    flex-direction: column;
+    color: rgb(51, 51, 51);
+    border: 2px rgb(157, 157, 247) solid;
+    width: 85%;
+    height: 100%;
+    align-self: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Footer Styling */
+
+
+
+#footer {
+    grid-row: 3; /* Set footer to the third row */
+    display: flex;
+    background-color: rgb(184, 176, 149);
+    
+}
+
+#footer a
+{
+    color: rgb(30, 42, 94);
+}
+
+
+
+#footer article {
+    display: flex; 
+    flex: 1;
+    
+    flex-direction: column;
+    align-items: flex-start; /* Left-align content in articles */
+    
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+
+   
+    
+}
+
+
+#footer article:nth-child(3) {
+    align-items: flex-start;
+
+    
+}
+
+
+
+
+footer img
+{
+    height: 17px;
+    vertical-align: middle;
+}
+
+footer ul
+{
+    vertical-align: middle;
+    
+}
+
+footer ul li
+{
+    display: inline;
+    
+}
+
+
+
+
+#AboutMe-container {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    align-items: flex-start;
+}
+
+#Aboutheader {
+    width: 70%;
+   
+   
+}
+
+#Aboutheader-text {
+    text-align: center;
+}
+
+
+#Aboutheader-nav {
+    width: 30%;
+    height: 100%;
+    
+    text-align: center;
+}
+
+#Aboutheader-nav h2 
+{
+    font-size: 1.5rem; /* Adjust the size as needed */
+    margin-bottom: 10px;
+}
+
+#Aboutheader-nav ul {
+    display: flex;
+    height: 78%;
+    flex-direction: column;
+    align-items: center;
+   
+    justify-content: space-between;
+   
+}
+
+#Aboutheader-nav ul a
+{
+    padding: 10px;
+    font-size: clamp(1rem, 2.5vw, 1.2rem); /* Adjusts between 1rem to 1.2rem */
+    background: rgb(225, 218, 218);
+    border-radius: 12px;
+    border: none;
+    color: black;
+}
+
+
+
+/* Hobbies */
+
+#hobbies
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: rgb(154, 154, 154);
+
+    
+    margin: 40px 0 40px;
+}
+
+.hobby
+{
+    display: block;
+    width: 80%;
+    background: rgb(225, 218, 218);
+    border-radius: 20px;
+    margin-bottom: 40px;
+    
+}
+
+.hobby-content
+{
+   display: flex;
+  
+   flex: 1;
+}
+
+.hobby-content div
+{
+    flex: 1;
+    
+    
+}
+
+.hobby-content img
+{
+    height: 200px;
+    
+    border-radius: 20px;
+}
+
+.hobby-reverse
+{
+    flex-direction: row-reverse;
+}
+
+
+
+
+
+
+
+
+#gallary
+{
+    text-align: center;
+    width: 70%;
+
+    align-self: center;
+    
+    padding:0 15px 15px 15px;
+    background: linear-gradient(157deg, rgba(171,171,171,1) 0%, rgba(28,79,89,1) 59%);
+    border-radius: 10px;
+}
+
+
+
+
+#gallary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+    gap: 10px; /* Space between grid items */
+}
+
+.gallary-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallary-item img {
+    width: 100%;
+    height: auto;
+}
+
+.description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background for description */
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallary-item:hover .description {
+    opacity: 1; /* Shows description when hovering */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #gallary-grid {
+        grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #gallary-grid {
+        grid-template-columns: 1fr; /* Adjust to 1 column on mobile devices */
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    #Aboutheader {
+        flex-direction: column; /* Stack image and text vertically */
+        text-align: center; /* Center-align the text and image */
+    }
+
+    #Aboutheader-text
+    {
+        width: 100%;
+    }
+
+    #Aboutheader-imagecontainer {
+        width: 50%; /* Adjust image size on smaller screens */
+        margin-top: 10px; /* Add space between text and image */
+        align-self: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:1200px)
+{
+    footer ul li
+    {
+        display: block;
+
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+    .ham-menu {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+    }
+
+    
+}
+
+/*  */
+
+
+
+/* <a target="_blank" href="https://icons8.com/icon/6Fsj3rv2DCmG/twitterx">TwitterX</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        
+            <nav>
+                <h2> Erik H</h2>
+                
+                <!-- Hamburger Menu for mobile -->
+                <div class="ham-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+    
+                <!-- Navigation Links -->
+                <ul class="nav-links">
+                    <li><a href="Home.html" class="hovereffect">HOME</a></li> 
+                    <li><a href="AboutMe.html" class="hovereffect nav-currentpage">ABOUT ME</a></li> 
+                    <li><a href="Projects.html" class="hovereffect">PROJECTS</a></li> 
+                    <li><a href="Contact.html" class="hovereffect">CONTACT</a></li> 
+                </ul>
+            </nav>
+                    <!-- 
+                        
+
+                        CSS-doesnt support clikc based toggeling very well 
+                    
+                        gallary ska kanske vara section och article 
+
+                        color scheme, dark mode? kolla schema 
+
+                        h1, h2, h3
+                        Text size borde vara standard 
+
+                        Ändra textfärg 
+
+                        Web safe fonts 
+                           
+                        kebabcase 
+
+                    -->
+        <main id="main">
+            <div id="contentbox">
+                
+                <div id="AboutMe-container">
+
+                    <header id="Aboutheader"> 
+                        <div id="Aboutheader-text">
+                            <h1>About Me </h1>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                            <br>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                            <br>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </header>
+                
+                    <aside id="Aboutheader-nav">
+                        <h2>Navigation to this site:</h2>
+                        <ul>
+                            <li><a href="#hobbies">Hobbies</a></li>
+                            <li><a href="#gallary">Gallary</a></li>
+                            <li><a href="#section3">Section 3</a></li>
+                        </ul>
+                    </aside>
+
+                </div>
+                
+                <section id="hobbies">
+                    <h2>HOBBIES</h2>
+                    <article class="hobby">
+                         <h3>Working out</h3>
+                         <br>
+                        <div class="hobby-content ">
+                            <div>
+
+                                <p>One of the things i enjoy the most is working out</p>
+                                <br>
+                                <p>I work out three times a week. </p>
+                                <br>
+                                <p>Its fun</p>
+                            </div>
+                            <img src="" alt="" >
+                        </div>
+                    </article>
+
+                    <article class="hobby">
+                        <h3>Video Games</h3>
+                        <br>
+                        <div class="hobby-content hobby-reverse">
+                            <div>
+                            <p>One of the things i do to relax is to play video games</p>
+                            </div>
+
+                            <img src="" alt="">
+                        </div>
+                    </article>
+
+                    <article class="hobby">
+                        <h3>Video Games</h3>
+                        <br>
+                        <div class="hobby-content">
+                            <div>
+                            <p>One of the things i do to relax is to play video games</p>
+                            </div>
+
+                            <img src="" alt="">
+                        </div>
+                    </article>
+                </section>
+                
+
+                <section id="gallary">
+                    <h2>Some images of me doing stuff</h2>
+                    <p>Hover over desired image to show description text</p>
+                    <div id="gallary-grid">  
+                        <article class="gallary-item"> 
+                            <img src="Images/watererik.jpg" alt="">
+                            <div class="description">
+                                Me posing in the waters of vombsjön 
+                            </div>  
+                        </article>
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/chilltrees.jpg" alt="">
+                            <div class="description">
+                                The trees at vombsjön
+                            </div>
+                        </article>
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/cutecat.jpg" alt="">
+                            <div class="description">Cute local cat that we call Bibbles</div>
+                        </article>
+
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/gfcat.jpg" alt="">
+                            <div class="description">
+                                My girlfriend holding Bibbles
+                            </div>
+                        </article>
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/turningtorso.jpg" alt="">
+                            <div class="description">
+                                Turning torso in Malmö where im basically from lol 
+                            </div>
+                        </article>
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/snow.jpg" alt="">
+                            <div class="description">
+                                Me and my girlfriend in Umeå, Sweden
+                            </div>
+                        </article>
+
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/goat.jpg" alt="">
+                            <div class="description">
+                                Skrylle nature reserve and a goat
+                            </div>
+                        </article>
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/dalbystenbrott.jpg" alt="" >
+                            <div class="description">
+                                Dalby stenbrott near where I live   
+                            </div>
+                        </article>
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/working.jpg" alt="">
+                            <div class="description">
+                                Me working on this project right now
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+
+                
+                <section id="gallary">
+                    <h2>Some images of me doing stuff</h2>
+                    <p>Hover over desired image to show description text</p>
+                    <div id="gallary-grid">  
+                        <article class="gallary-item"> 
+                            <img src="Images/watererik.jpg" alt="">
+                            <div class="description">
+                                Me posing in the waters of vombsjön 
+                            </div>  
+                        </article>
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/chilltrees.jpg" alt="">
+                            <div class="description">
+                                The trees at vombsjön
+                            </div>
+                        </article>
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/cutecat.jpg" alt="">
+                            <div class="description">Cute local cat that we call Bibbles</div>
+                        </article>
+
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/gfcat.jpg" alt="">
+                            <div class="description">
+                                My girlfriend holding Bibbles
+                            </div>
+                        </article>
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/turningtorso.jpg" alt="">
+                            <div class="description">
+                                Turning torso in Malmö where im basically from lol 
+                            </div>
+                        </article>
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/snow.jpg" alt="">
+                            <div class="description">
+                                Me and my girlfriend in Umeå, Sweden
+                            </div>
+                        </article>
+
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/goat.jpg" alt="">
+                            <div class="description">
+                                Skrylle nature reserve and a goat
+                            </div>
+                        </article>
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/dalbystenbrott.jpg" alt="" >
+                            <div class="description">
+                                Dalby stenbrott near where I live   
+                            </div>
+                        </article>
+                
+                        <article class="gallary-item"> 
+                            <img src="Images/working.jpg" alt="">
+                            <div class="description">
+                                Me working on this project right now
+                            </div>
+                        </article>
+                    </div>
+                </section>
+                
+            </div>
+        </main>
+        
+
+        <footer id="footer">
+            <article><p>&copy; 2024 by Erik Harr</p>
+            </article>
+            <article>
+                <div> 
+                    <h3>My Social Media</h3>
+                    <ul>
+                        <li><img src="Images/icons8-twitterx-16.svg" alt="image"><a href="https://x.com/meNemJeff1337" class="hovereffect">Twitter</a></li>
+                        <li><img src="Images/instagram-logo-8869.svg" alt="image" height="10px"><a href="https://www.instagram.com/erik_harr_1337/" class="hovereffect">Instagram</a></li>
+                        <li><img src="Images/facebook-logo-2428.svg" alt=""><a href="https://www.facebook.com/HarrErik?locale=sv_SE" class="hovereffect">Facebook</a></li>
+                        <li><img src="Images/github-logo-6532.svg" alt=""><a href="https://github.com/ErikH1337" class="hovereffect">Github</a></li>
+                    </ul>
+                </div>
+            </article>
+            <article>
+                <h3>Navigate this site</h3>
+                <ul>
+                    <li><a href="Home.html" class="hovereffect">Home</a></li>
+                    <li><a href="AboutMe.html" class="hovereffect">About</a></li>
+                    <li><a href="Projects.html" class="hovereffect">Projects</a></li>
+                    <li><a href="Contact.html" class="hovereffect">Contact</a></li>
+                </ul>
+            </article>
+        </footer>
+    </div>
+
+    <script>
+        const hamMenu = document.querySelector('.ham-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamMenu.addEventListener('click', () => {
+            hamMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    </script>
+    
+</body>
+</html>

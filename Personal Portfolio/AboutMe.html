@@ -11,17 +11,25 @@
 <body>
 
     <div class="grid-container">
-        <nav>
-            <h2> Erik <span class="dissapeartext">H</span></h2>
-    
-            <ul>
+        
+            <nav>
+                <h2> Erik H</h2>
                 
-                <li><a href="Home.html" class="hovereffect">Home </a></li> <!-- välkommande sida där jag kan introducera mig själv -->
-                <li><a href="AboutMe.html" class="hovereffect">About <span class="dissapeartext">Me</span></a></li> <!-- hobbies och vad jag gillar att göra -->
-                <li><a href="Projects.html" class="hovereffect">Projects</a></li> <!-- Image gallary, achivements, bilder på vänsta sidan medans det är text som beskriver vad jag gör osv-->
-                <li><a href="Contact.html" class="hovereffect">Contact</a></li> <!-- Här ska contact form vara -->
-            </ul>
-        </nav>
+                <!-- Hamburger Menu for mobile -->
+                <div class="ham-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+    
+                <!-- Navigation Links -->
+                <ul class="nav-links">
+                    <li><a href="Home.html" class="hovereffect">HOME</a></li> 
+                    <li><a href="AboutMe.html" class="hovereffect nav-currentpage">ABOUT ME</a></li> 
+                    <li><a href="Projects.html" class="hovereffect">PROJECTS</a></li> 
+                    <li><a href="Contact.html" class="hovereffect">CONTACT</a></li> 
+                </ul>
+            </nav>
                     <!-- 
                         
 
@@ -36,23 +44,79 @@
 
                         Ändra textfärg 
 
+                        Web safe fonts 
+                           
+                        kebabcase 
+
                     -->
         <main id="main">
             <div id="contentbox">
-        
-                <header id="Aboutheader"> 
-                    
-                    <div id="Aboutheader-text">
-                        <h1>About Me </h1>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto enim earum iure fuga animi laboriosam ipsa exercitationem, rerum temporibus autem.</p>
-                        <br>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore ullam a excepturi, cum numquam culpa!</p>
-                        <br>
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, quo!</p>
-                    </div>
+                
+                <div id="AboutMe-container">
 
+                    <header id="Aboutheader"> 
+                        <div id="Aboutheader-text">
+                            <h1>About Me </h1>
+                            <p>Hello and welcome to the about me page. Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, mollitia!</p>
+                            <br>
+                            <p>Learn stuff about me </p>
+                            <br>
+                            <p>To the right you can go to diffrent parts of the site</p>
+                        </div>
+                    </header>
+                
+                    <aside id="Aboutheader-nav">
+                        <ul>
+                            <li><a href="#hobbies" class="hovereffect">Hobbies</a></li>
+                            <li><a href="#gallary" class="hovereffect">Gallary</a></li>
+                        </ul>
+                    </aside>
 
-                </header>
+                </div>
+                
+                <section id="hobbies">
+                    <h2>HOBBIES</h2>
+                    <article class="hobby">
+                         <h3>Working out</h3>
+                         <br>
+                        <div class="hobby-content">
+                            <div class="hobby-text">
+
+                                <p>One of the things i enjoy the most is working out Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, inventore!</p>
+                                <br>
+                                <p>I work out three times a week. I work out on Monday, Wednesday, and friday for about 1 and a half hour each. </p>
+                                <br>
+                                <p>Its fun</p>
+                            </div>
+                            <img src="Images/NotmeWorkingout.jpg" alt="A person bench pressing" >
+                        </div>
+                    </article>
+
+                    <article class="hobby">
+                        <h3>Video Games</h3>
+                        <br>
+                        <div class="hobby-content hobby-reverse">
+                            <div class="hobby-text">
+                            <p>One of the things i do to relax is to play video games</p>
+                            </div>
+
+                            <img src="Images/notmeVideogame.jpg" alt="A guy playing video games and having fun">
+                        </div>
+                    </article>
+
+                    <article class="hobby">
+                        <h3>Video Games</h3>
+                        <br>
+                        <div class="hobby-content">
+                            <div class="hobby-text">
+                            <p>One of the things i do to relax is to play video games</p>
+                            </div>
+
+                            <img src="Images/catplaceholder.jpg" alt="">
+                        </div>
+                    </article>
+                </section>
+                
 
                 <section id="gallary">
                     <h2>Some images of me doing stuff</h2>
@@ -61,14 +125,14 @@
                         <article class="gallary-item"> 
                             <img src="Images/watererik.jpg" alt="">
                             <div class="description">
-                                Me posing in the waters of Vombsjön 
+                                Me posing in the waters of vombsjön 
                             </div>  
                         </article>
                 
                         <article class="gallary-item"> 
                             <img src="Images/chilltrees.jpg" alt="">
                             <div class="description">
-                                The trees beside vombsjön
+                                The trees at vombsjön
                             </div>
                         </article>
                 
@@ -76,6 +140,7 @@
                             <img src="Images/cutecat.jpg" alt="">
                             <div class="description">Cute local cat that we call Bibbles</div>
                         </article>
+
                 
                         <article class="gallary-item"> 
                             <img src="Images/gfcat.jpg" alt="">
@@ -85,61 +150,86 @@
                         </article>
                 
                         <article class="gallary-item"> 
-                            <img src="Images/catplaceholder.jpg" alt="">
-                            <div class="description"></div>
+                            <img src="Images/turningtorso.jpg" alt="">
+                            <div class="description">
+                                Turning torso in Malmö where im basically from lol 
+                            </div>
                         </article>
                 
                         <article class="gallary-item"> 
-                            <img src="Images/catplaceholder.jpg" alt="">
-                            <div class="description"></div>
+                            <img src="Images/snow.jpg" alt="">
+                            <div class="description">
+                                Me and my girlfriend in Umeå, Sweden
+                            </div>
                         </article>
+
                 
                         <article class="gallary-item"> 
                             <img src="Images/goat.jpg" alt="">
-                            <div class="description">Skrylle nature reserve and a goat</div>
+                            <div class="description">
+                                Skrylle nature reserve and a goat
+                            </div>
                         </article>
                 
                         <article class="gallary-item"> 
-                            <img src="Images/catplaceholder.jpg" alt="">
-                            <div class="description"></div>
+                            <img src="Images/dalbystenbrott.jpg" alt="" >
+                            <div class="description">
+                                Dalby stenbrott near where I live   
+                            </div>
                         </article>
                 
                         <article class="gallary-item"> 
-                            <img src="Images/catplaceholder.jpg" alt="">
-                            <div class="description"></div>
+                            <img src="Images/working.jpg" alt="">
+                            <div class="description">
+                                Me working on this project right now
+                            </div>
                         </article>
                     </div>
                 </section>
-                
+
+
+
+
                 
             </div>
         </main>
         
 
         <footer id="footer">
+            <article><p>&copy; 2024 by Erik Harr</p>
+            </article>
             <article>
                 <div> 
-                    <h2>My Social Media</h2>
+                    <h3>My Social Media</h3>
                     <ul>
-                        <li><img src="Images/icons8-twitterx-16.svg" alt="image "><a href="https://x.com/meNemJeff1337" class="hovereffect">Twitter</a></li>
-                        <li><img src="Images/instagram-logo-8869.svg" alt="image" height="10px"><a href="https://www.instagram.com/erik_harr_1337/" class="hovereffect">instagram</a></li>
-                        <li><img src="Images/facebook-logo-2428.svg" alt=""><a href="https://www.facebook.com/HarrErik?locale=sv_SE" class="hovereffect">Facebook</a></li>
-                        <li><img src="Images/github-logo-6532.svg" alt=""><a href="https://github.com/ErikH1337" class="hovereffect">Github</a></li>
+                        <li><img src="Images/icons8-twitterx-16.svg" alt="Image of the Twitter logo"><a href="https://x.com/meNemJeff1337" class="hovereffect">Twitter</a></li>
+                        <li><img src="Images/instagram-logo-8869.svg" alt="Image of the Instagram logo" height="10px"><a href="https://www.instagram.com/erik_harr_1337/" class="hovereffect">Instagram</a></li>
+                        <li><img src="Images/facebook-logo-2428.svg" alt="Image of the Facebook logo"><a href="https://www.facebook.com/HarrErik?locale=sv_SE" class="hovereffect">Facebook</a></li>
+                        <li><img src="Images/github-logo-6532.svg" alt="Image of the Github logo"><a href="https://github.com/ErikH1337" class="hovereffect">Github</a></li>
                     </ul>
                 </div>
             </article>
-    
-    
             <article>
-                <h2> Navigate this site</h2>
+                <h3>Navigate this site</h3>
                 <ul>
                     <li><a href="Home.html" class="hovereffect">Home</a></li>
-                    <li><a href="#" class="hovereffect">About</a></li>
+                    <li><a href="AboutMe.html" class="hovereffect">About</a></li>
                     <li><a href="Projects.html" class="hovereffect">Projects</a></li>
-                    <li><a href="#" class="hovereffect">Contact</a></li>
+                    <li><a href="Contact.html" class="hovereffect">Contact</a></li>
                 </ul>
             </article>
         </footer>
     </div>
+
+    <script>
+        const hamMenu = document.querySelector('.ham-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamMenu.addEventListener('click', () => {
+            hamMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    </script>
+    
 </body>
 </html>
