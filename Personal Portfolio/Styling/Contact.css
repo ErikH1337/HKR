@@ -1,25 +1,35 @@
 
 form {
-    max-width: 600px;
+    
     margin: auto;
     padding: 20px;
     background-color: #f2f2f2;
     border-radius: 10px;
+    border: 1px solid #fdc482;
 }
 
 label {
     font-weight: bold;
 }
 
-input[type="text"], input[type="email"], textarea {
+input[type="text"], input[type="email"], textarea 
+{
     width: 100%;
+    
     padding: 10px;
     margin: 5px 0 15px 0;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #fdc482;
 }
 
-input[type="submit"] {
+input[type="text"]:focus,input[type="email"]:focus, textarea:focus {
+    outline: 2px rgb(87, 231, 85) solid; 
+    border: none;
+}
+
+input[type="submit"] 
+{
+    width: 100%;
     background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
@@ -28,6 +38,7 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover 
+{
     background-color: #45a049;
 }

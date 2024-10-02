@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Erik Harr</title>
+
+    <link rel="stylesheet" href="Styling/stylesheet.css">
+    <link rel="stylesheet" href="Styling/Gallery.css">
+</head>
+
+<body>
+
+
+    <nav>
+        <h2> Erik H</h2>
+
+        <!-- Hamburger Menu for mobile -->
+        <div class="ham-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links">
+            <li><a href="Home.html" class="hovereffect">HOME</a></li>
+            <li><a href="AboutMe.html" class="hovereffect">ABOUT ME</a></li>
+            <li><a href="Gallery.html" class="hovereffect nav-currentpage">GALLERY</a></li>
+            <li><a href="Contact.html" class="hovereffect">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <main id="main">
+        <div id="contentbox">
+
+            <header id="gallery-header">
+                <h1>Gallery</h1>
+                <p>Welcome to the gallery</p>
+                <br>
+                <p>Here you will find images of me and my life</p>
+                <br>
+            </header>
+
+
+
+            <section id="gallary-grid">
+                <article class="gallary-item">
+
+                    <img src="Images/watererik.jpg" alt="">
+                    <div class="description">
+                        Me posing in the waters of vombsjön
+                    </div>
+                </article>
+
+                <article class="gallary-item">
+                    <img src="Images/chilltrees.jpg" alt="">
+                    <div class="description">
+                        The trees at vombsjön
+                    </div>
+                </article>
+
+                <article class="gallary-item">
+                    <img src="Images/cutecat.jpg" alt="">
+                    <div class="description">Cute local cat that we call Bibbles</div>
+                </article>
+
+
+                <article class="gallary-item">
+                    <img src="Images/gfcat.jpg" alt="">
+                    <div class="description">
+                        My girlfriend holding Bibbles
+                    </div>
+                </article>
+
+                <article class="gallary-item">
+                    <img src="Images/turningtorso.jpg" alt="">
+                    <div class="description">
+                        Turning torso in Malmö where im basically from lol
+                    </div>
+                </article>
+
+                <article class="gallary-item">
+                    <img src="Images/snow.jpg" alt="">
+                    <div class="description">
+                        Me and my girlfriend in Umeå, Sweden
+                    </div>
+                </article>
+
+
+                <article class="gallary-item">
+                    <img src="Images/goat.jpg" alt="">
+                    <div class="description">
+                        Skrylle nature reserve and a goat
+                    </div>
+                </article>
+
+                <article class="gallary-item">
+                    <img src="Images/dalbystenbrott.jpg" alt="">
+                    <div class="description">
+                        Dalby stenbrott near where I live
+                    </div>
+                </article>
+
+                <article class="gallary-item">
+                    <img src="Images/working.jpg" alt="">
+                    <div class="description">
+                        Me working on this project right now
+                    </div>
+                </article>
+            </section>
+
+
+        </div>
+    </main>
+    <footer id="footer">
+        
+        <p> &copy;/<time datetime="2024">2024</time> - by Erik H</p>
+        <article>
+            <div>
+                <h3>My Social Media</h3>
+                <ul>
+                    <li><img src="Images/icons8-twitterx-16.svg" alt="New twitter logo"><a href="https://x.com/meNemJeff1337" class="hovereffect">Twitter</a></li>
+                    <li><img src="Images/instagram-logo-8869.svg" alt="Instagram logo" height="10px"><a href="https://www.instagram.com/erik_harr_1337/" class="hovereffect">Instagram</a></li>
+                    <li><img src="Images/facebook-logo-2428.svg" alt="Facebook logo"><a href="https://www.facebook.com/HarrErik?locale=sv_SE" class="hovereffect">Facebook</a></li>
+                    <li><img src="Images/github-logo-6532.svg" alt="Github logo"><a href="https://github.com/ErikH1337" class="hovereffect">Github</a></li>
+                </ul>
+            </div>
+        </article>
+        <article>
+            <h3>Navigate this site</h3>
+            <ul>
+                <li><a href="Home.html" class="hovereffect">Home</a></li>
+                <li><a href="AboutMe.html" class="hovereffect">About</a></li>
+                <li><a href="Gallery.html" class="hovereffect">Gallery</a></li>
+                <li><a href="Contact.html" class="hovereffect">Contact</a></li>
+            </ul>
+        </article>
+    </footer>
+    
+
+    <script>
+        const hamMenu = document.querySelector('.ham-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamMenu.addEventListener('click', () => {
+            hamMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    </script>
+    </div>
+</body>
+
+</html>

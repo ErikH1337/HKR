@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,218 +9,171 @@
     <link rel="stylesheet" href="Styling/stylesheet.css">
     <link rel="stylesheet" href="Styling/Aboutme.css">
 </head>
+
 <body>
+    <nav>
+        <h2> Erik H</h2>
 
-    <div class="grid-container">
-        
-            <nav>
-                <h2> Erik H</h2>
-                
-                <!-- Hamburger Menu for mobile -->
-                <div class="ham-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-    
-                <!-- Navigation Links -->
-                <ul class="nav-links">
-                    <li><a href="Home.html" class="hovereffect">HOME</a></li> 
-                    <li><a href="AboutMe.html" class="hovereffect nav-currentpage">ABOUT ME</a></li> 
-                    <li><a href="Projects.html" class="hovereffect">PROJECTS</a></li> 
-                    <li><a href="Contact.html" class="hovereffect">CONTACT</a></li> 
-                </ul>
-            </nav>
-                    <!-- 
-                        
+        <!-- Hamburger Menu for mobile -->
+        <div class="ham-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
-                        CSS-doesnt support clikc based toggeling very well 
-                    
-                        gallary ska kanske vara section och article 
+        <!-- Navigation Links -->
+        <ul class="nav-links">
+            <li><a href="Home.html" class="hovereffect">HOME</a></li>
+            <li><a href="AboutMe.html" class="hovereffect nav-currentpage">ABOUT ME</a></li>
+            <li><a href="Gallery.html" class="hovereffect">GALLERY</a></li>
+            <li><a href="Contact.html" class="hovereffect">CONTACT</a></li>
+        </ul>
+    </nav>
+    <!--                     
 
                         color scheme, dark mode? kolla schema 
-
-                        h1, h2, h3
-                        Text size borde vara standard 
-
-                        Ändra textfärg 
-
+                 
                         Web safe fonts 
                            
                         kebabcase 
 
                     -->
-        <main id="main">
-            <div id="contentbox">
-                
-                <div id="AboutMe-container">
+    <main id="main">
+        <div id="contentbox">
 
-                    <header id="Aboutheader"> 
-                        <div id="Aboutheader-text">
-                            <h1>About Me </h1>
-                            <p>Hello and welcome to the about me page. Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, mollitia!</p>
-                            <br>
-                            <p>Learn stuff about me </p>
-                            <br>
-                            <p>To the right you can go to diffrent parts of the site</p>
-                        </div>
-                    </header>
-                
-                    <aside id="Aboutheader-nav">
-                        <ul>
-                            <li><a href="#hobbies" class="hovereffect">Hobbies</a></li>
-                            <li><a href="#gallary" class="hovereffect">Gallary</a></li>
-                        </ul>
-                    </aside>
+            <div id="AboutMe-container">
 
-                </div>
-                
-                <section id="hobbies">
-                    <h2>HOBBIES</h2>
-                    <article class="hobby">
-                         <h3>Working out</h3>
-                         <br>
-                        <div class="hobby-content">
-                            <div class="hobby-text">
-
-                                <p>One of the things i enjoy the most is working out Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, inventore!</p>
-                                <br>
-                                <p>I work out three times a week. I work out on Monday, Wednesday, and friday for about 1 and a half hour each. </p>
-                                <br>
-                                <p>Its fun</p>
-                            </div>
-                            <img src="Images/NotmeWorkingout.jpg" alt="A person bench pressing" >
-                        </div>
-                    </article>
-
-                    <article class="hobby">
-                        <h3>Video Games</h3>
+                <header id="Aboutheader">
+                    <div id="Aboutheader-text">
+                        <h1>About Me </h1>
+                        <p>Hello and welcome to the about me page. Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Saepe, mollitia!</p>
                         <br>
-                        <div class="hobby-content hobby-reverse">
-                            <div class="hobby-text">
-                            <p>One of the things i do to relax is to play video games</p>
-                            </div>
-
-                            <img src="Images/notmeVideogame.jpg" alt="A guy playing video games and having fun">
-                        </div>
-                    </article>
-
-                    <article class="hobby">
-                        <h3>Video Games</h3>
+                        <p>Learn stuff about me </p>
                         <br>
-                        <div class="hobby-content">
-                            <div class="hobby-text">
-                            <p>One of the things i do to relax is to play video games</p>
-                            </div>
-
-                            <img src="Images/catplaceholder.jpg" alt="">
-                        </div>
-                    </article>
-                </section>
-                
-
-                <section id="gallary">
-                    <h2>Some images of me doing stuff</h2>
-                    <p>Hover over desired image to show description text</p>
-                    <div id="gallary-grid">  
-                        <article class="gallary-item"> 
-                            <img src="Images/watererik.jpg" alt="">
-                            <div class="description">
-                                Me posing in the waters of vombsjön 
-                            </div>  
-                        </article>
-                
-                        <article class="gallary-item"> 
-                            <img src="Images/chilltrees.jpg" alt="">
-                            <div class="description">
-                                The trees at vombsjön
-                            </div>
-                        </article>
-                
-                        <article class="gallary-item"> 
-                            <img src="Images/cutecat.jpg" alt="">
-                            <div class="description">Cute local cat that we call Bibbles</div>
-                        </article>
-
-                
-                        <article class="gallary-item"> 
-                            <img src="Images/gfcat.jpg" alt="">
-                            <div class="description">
-                                My girlfriend holding Bibbles
-                            </div>
-                        </article>
-                
-                        <article class="gallary-item"> 
-                            <img src="Images/turningtorso.jpg" alt="">
-                            <div class="description">
-                                Turning torso in Malmö where im basically from lol 
-                            </div>
-                        </article>
-                
-                        <article class="gallary-item"> 
-                            <img src="Images/snow.jpg" alt="">
-                            <div class="description">
-                                Me and my girlfriend in Umeå, Sweden
-                            </div>
-                        </article>
-
-                
-                        <article class="gallary-item"> 
-                            <img src="Images/goat.jpg" alt="">
-                            <div class="description">
-                                Skrylle nature reserve and a goat
-                            </div>
-                        </article>
-                
-                        <article class="gallary-item"> 
-                            <img src="Images/dalbystenbrott.jpg" alt="" >
-                            <div class="description">
-                                Dalby stenbrott near where I live   
-                            </div>
-                        </article>
-                
-                        <article class="gallary-item"> 
-                            <img src="Images/working.jpg" alt="">
-                            <div class="description">
-                                Me working on this project right now
-                            </div>
-                        </article>
+                        <p>At the navigation box you can navigate diffrent parts of this webpage</p>
                     </div>
-                </section>
+                </header>
 
-
-
-
-                
-            </div>
-        </main>
-        
-
-        <footer id="footer">
-            <article><p>&copy; 2024 by Erik Harr</p>
-            </article>
-            <article>
-                <div> 
-                    <h3>My Social Media</h3>
+                <aside id="Aboutheader-nav">
                     <ul>
-                        <li><img src="Images/icons8-twitterx-16.svg" alt="Image of the Twitter logo"><a href="https://x.com/meNemJeff1337" class="hovereffect">Twitter</a></li>
-                        <li><img src="Images/instagram-logo-8869.svg" alt="Image of the Instagram logo" height="10px"><a href="https://www.instagram.com/erik_harr_1337/" class="hovereffect">Instagram</a></li>
-                        <li><img src="Images/facebook-logo-2428.svg" alt="Image of the Facebook logo"><a href="https://www.facebook.com/HarrErik?locale=sv_SE" class="hovereffect">Facebook</a></li>
-                        <li><img src="Images/github-logo-6532.svg" alt="Image of the Github logo"><a href="https://github.com/ErikH1337" class="hovereffect">Github</a></li>
+                        <li><a href="#course-journey" class="hovereffect">Journey</a></li>
+                        <li><a href="#skills" class="hovereffect">Skills</a></li>
                     </ul>
-                </div>
-            </article>
-            <article>
-                <h3>Navigate this site</h3>
+                </aside>
+
+            </div>
+
+            <section id="course-journey" class="aboutme-sections">
+                <header>
+                    <h2>My Web Development Journey</h2>
+                </header>
+
+                <article class="journey-section">
+                    <p class="first-letter">After taking two web development courses in gymnasium, I discovered that
+                        coding was not only challenging but also the most enjoyable aspect of my studies. These courses
+                        gave me hands-on experience and sparked my interest in creating websites.</p>
+                </article>
+
+                <article class="journey-section">
+                    <p>After graduating, I decided to work part-time to earn money while pursuing a course in web
+                        development. This gives me the flexibility to deepen my knowledge and grow my skills while
+                        balancing my personal commitments.</p>
+                </article>
+
+                <img src="Images/pfp.jpg" alt="Me at graduation" id="journey-image">
+            </section>
+
+            <section id="skills" class="aboutme-sections">
+                <h2>Skills</h2>
+                <article class="skill">
+                    <h3>Working out</h3>
+                    <br>
+                    <div class="skill-content">
+                        <div class="skill-text">
+
+                            <p>
+                                One of the things i enjoy the most is working out 
+
+                            </p>
+
+                            <p>I work out three times a week. I work out on Monday, Wednesday, and friday for about 1
+                                and a half hour each. </p>
+
+                            <p>I can bench 100kg!</p>
+                        </div>
+                        <img src="Images/NotmeWorkingout.jpg" alt="A person bench pressing">
+                    </div>
+                </article>
+
+                <article class="skill">
+                    <h3>Web development</h3>
+                    <br>
+                    <div class="skill-content skill-reverse">
+                        <div class="skill-text">
+                            <p>
+                                I can make extremely cool webpages 
+                            </p>
+
+                            <p>
+                                I think its pretty fun and i am currently doing this, whaaat??? 
+                            </p>
+
+                            <p>
+                                I am currently taking this course to develop my web deveoplemt skills and see if i should pursue it in the future
+                            </p>
+                        </div>
+
+                        <img src="Images/webdevwork.jpg" alt="Screenshot of me working on this website">
+                        
+                    </div>
+                </article>
+
+                <article class="skill">
+                    <h3>Tennis</h3>
+                    <br>
+                    <div class="skill-content">
+                        <div class="skill-text">
+                            <p>I like playing tennis.</p>
+
+                            <p>I play tennis with my friends</p>
+
+                            <p>its fun, but i like working out more</p>
+                        </div>
+
+                        <img src="Images/notmeTennis.jpg" alt="Image of a happy guy on a tennisfield">
+                    </div>
+                </article>
+            </section>
+
+    </main>
+
+
+    <footer id="footer">
+        
+        <p> &copy;/<time datetime="2024">2024</time> - by Erik H</p>
+        <article>
+            <div>
+                <h3>My Social Media</h3>
                 <ul>
-                    <li><a href="Home.html" class="hovereffect">Home</a></li>
-                    <li><a href="AboutMe.html" class="hovereffect">About</a></li>
-                    <li><a href="Projects.html" class="hovereffect">Projects</a></li>
-                    <li><a href="Contact.html" class="hovereffect">Contact</a></li>
+                    <li><img src="Images/icons8-twitterx-16.svg" alt="New twitter logo"><a href="https://x.com/meNemJeff1337" class="hovereffect">Twitter</a></li>
+                    <li><img src="Images/instagram-logo-8869.svg" alt="Instagram logo" height="10px"><a href="https://www.instagram.com/erik_harr_1337/" class="hovereffect">Instagram</a></li>
+                    <li><img src="Images/facebook-logo-2428.svg" alt="Facebook logo"><a href="https://www.facebook.com/HarrErik?locale=sv_SE" class="hovereffect">Facebook</a></li>
+                    <li><img src="Images/github-logo-6532.svg" alt="Github logo"><a href="https://github.com/ErikH1337" class="hovereffect">Github</a></li>
                 </ul>
-            </article>
-        </footer>
-    </div>
+            </div>
+        </article>
+        <article>
+            <h3>Navigate this site</h3>
+            <ul>
+                <li><a href="Home.html" class="hovereffect">Home</a></li>
+                <li><a href="AboutMe.html" class="hovereffect">About</a></li>
+                <li><a href="Gallery.html" class="hovereffect">Gallery</a></li>
+                <li><a href="Contact.html" class="hovereffect">Contact</a></li>
+            </ul>
+        </article>
+    </footer>
+    
 
     <script>
         const hamMenu = document.querySelector('.ham-menu');
@@ -230,6 +184,7 @@
             navLinks.classList.toggle('active');
         });
     </script>
-    
+
 </body>
+
 </html>

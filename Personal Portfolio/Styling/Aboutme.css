@@ -1,31 +1,32 @@
 #AboutMe-container {
     display: flex;
-    justify-content: space-between;
-    height: auto;
-    align-items: flex-start;
 
-    
+    align-items: stretch;
     margin-bottom: 40px;
 }
 
 #Aboutheader {
     width: 80%;
-   
 
 }
 
 #Aboutheader-text {
     text-align: center;
+    
+    
 }
 
 
 #Aboutheader-nav {
+    
     width: 20%;
-    height: 100%;
+    
+    
     
     text-align: center;
     background: rgb(225, 218, 218);
-    border-radius: 20px;
+    
+    border-radius: 0 0 20px 20px;
 }
 
 
@@ -43,21 +44,13 @@
 
 #Aboutheader-nav ul a
 {
-    padding: 5px;
     font-size: clamp(1rem, 2.5vw, 1.2rem); /* Adjusts between 1rem to 1.2rem */
-    
-    
-    
     color: black;
-    
-
 }
 
 
 
-/* Hobbies */
-
-#hobbies
+.aboutme-sections
 {
     display: flex;
     flex-direction: column;
@@ -67,10 +60,35 @@
     background-color: rgb(154, 154, 154);
 
     scroll-margin-top: 60px;
- 
+}
+/* Why i chose webdev course  */
+
+#course-journey {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns by default */    gap: 20px;
+    padding: 20px;
+    align-items: center;
+    margin-bottom: 40px;
 }
 
-.hobby
+.journey-section {
+    padding: 10px;
+}
+
+
+
+#journey-image {
+    grid-column: span 1;
+    justify-self: center;
+    width: 50%;
+    border-radius: 10px;
+}
+
+
+/* Hobbies */
+
+
+.skill
 {
     display: block;
     width: 80%;
@@ -80,7 +98,7 @@
     
 }
 
-.hobby-content
+.skill-content
 {
    display: flex;
 
@@ -88,7 +106,7 @@
    flex: 1;
 }
 
-.hobby-text
+.skill-text
 {
     display: flex;
     flex-direction: column;
@@ -98,16 +116,16 @@
     
 }
 
-.hobby-content img
+.skill-content img
 {
-    height: 100%;
+    height: 80%;
     width: 20%;
     min-width: 150px;
 
     border-radius: 20px;
 }
 
-.hobby-reverse
+.skill-reverse
 {
     flex-direction: row-reverse;
 }
@@ -115,107 +133,57 @@
 
 
 
-
-
-
-
-
-
-
-#gallary
+@media (max-width: 811px)
 {
-    text-align: center;
-    width: 70%;
+    #course-journey
+    {
+        
+        grid-template-columns: 1fr; /* Stacks columns on top of each other */        
+        
+    }
 
-    scroll-margin-top: 60px;
-    align-self: center;
-    
-    padding:0 15px 15px 15px;
-    background: linear-gradient(157deg, rgba(171,171,171,1) 0%, rgba(28,79,89,1) 59%);
-    border-radius: 10px;
-}
-
-
-
-
-#gallary-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
-    gap: 10px; /* Space between grid items */
-}
-
-.gallary-item {
-    position: relative;
-    overflow: hidden;
-}
-
-.gallary-item img {
-    width: 100%;
-    height: auto;
-}
-
-.description {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* Dark background for description */
-    color: white;
-    padding: 10px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.gallary-item:hover .description {
-    opacity: 1; /* Shows description when hovering */
-}
+    .journey-image
+    {
+        grid-column: span 1;
+    }
 
 
-@media (max-width:1000px)
-{
-    .hobby-content 
+    #Aboutheader, #Aboutheader-nav
+    {
+        width: 100%;
+        border-radius: 0px;
+    }
+
+    #AboutMe-container
     {
         flex-direction: column;
     }
 
-    .hobby-text
+
+}
+
+
+
+@media (max-width:1000px)
+{
+    .skill-content 
+    {
+        flex-direction: column;
+    }
+
+    .skill-text
     {
         width: 100%;
     }
 
-    .hobby-content img
+    .skill-content img
     {
         align-self: center;
+        width: 40%;
     }
 }
 
-@media (max-width: 768px) {
-    #gallary-grid {
-        grid-template-columns: repeat(2, 1fr); /*  2 columns on smaller screens */
-    }
 
-    #Aboutheader {
-        flex-direction: column; /* Stack image and text vertically */
-        text-align: center; /* Center-align the text and image */
-    }
-
-    #Aboutheader-text
-    {
-        width: 100%;
-    }
-
-    #Aboutheader-imagecontainer {
-        width: 50%; /* Adjust image size on smaller screens */
-        margin-top: 10px; /* Add space between text and image */
-        align-self: center;
-    }
-}
-
-@media (max-width: 480px) {
-    #gallary-grid {
-        grid-template-columns: 1fr; /* Adjust to 1 column on mobile devices */
-    }
-}
 
 
 

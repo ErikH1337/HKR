@@ -1,59 +1,48 @@
-*{
-    
+* {
     margin: 0;
     padding: 0;
-    text-decoration: none; /*Removes annoying marker under hyperlinks*/
+    text-decoration: none; /* Removes marker under hyperlinks */
     box-sizing: border-box;
-    font-family: monospace, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  /* ADD webbsafe font */
-    list-style-type: none;  /* removes  */
+    font-family: monospace, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Web safe font */
+    list-style-type: none; /* Removes bullets */
     scroll-behavior: smooth;
 }
 
-body
-{
-    background: rgb(225, 218, 218); /* Scrolling up fast makes it look like an extension of the navigationbar*/
+/* Body Styling */
+body {
+    background: rgb(225, 218, 218); /* Extends the navbar background when scrolling */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-h1
-{
-    font-size: clamp(2.5rem, 5vw, 4rem); 
-
+/* Typography */
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
 }
 
-h2
-{
-    font-size: clamp(1.5rem, 3vw, 1.875rem); 
+h2 {
+    font-size: clamp(1.5rem, 3vw, 1.875rem);
 }
 
-h3
-{
+h3 {
     font-size: clamp(1.25rem, 2.5vw, 1.45rem);
 }
 
-p
-{
+p {
     color: black;
     font-size: clamp(1rem, 2.5vw, 1.2rem);
 }
 
-
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto; /* Nav, Main, Footer */
-    min-height: 100vh;
+.first-letter::first-letter {
+    color: rgb(255, 174, 0);
+    font-size: clamp(2rem, 5vw, 2.4rem);
 }
 
-
-/* Navbar styling */
+/* Navbar Styling */
 nav {
-    grid-row: 1;
-    
     position: sticky;
     top: 0;
-       
-    
-      
     width: 100%;
     background: rgb(225, 218, 218);
     display: flex;
@@ -61,48 +50,39 @@ nav {
     align-items: center;
     padding: 10px;
     z-index: 9999;
-    
-    /* Set a minimum height */
-    min-height: 65px; /* Ensure nav doesn't shrink below a certain height */
+    min-height: 65px; /* Minimum height for navbar */
 }
-
 
 nav ul {
     justify-content: flex-end;
 }
 
-nav a
-{
+nav a {
     color: rgb(51, 51, 51);
 }
 
-.nav-currentpage
-{
+.nav-currentpage {
     color: rgb(192, 166, 132);
-    
 }
 
 nav ul li {
-    
-    font-size: clamp(1.125rem, 3vw, 1.5rem); /* Adjusts between 1.125rem to 1.5rem */    padding: 8px 8px 8px 30px;
+    font-size: clamp(1.125rem, 3vw, 1.5rem); /* Font size responsive */
+    padding: 8px 8px 8px 30px;
 }
 
 .hovereffect:hover {
     border-bottom: 1.5px #3498db solid;
     z-index: 999;
-
 }
 
-/* Hamburger menu */
-
+/* Hamburger Menu */
 .ham-menu {
-    display: none; /* Hide on larger screens */
+    display: none; /* Hidden on larger screens */
     flex-direction: column;
     justify-content: space-around;
     width: 35px;
     height: 30px;
     cursor: pointer;
-
     margin-right: 20px;
 }
 
@@ -114,8 +94,9 @@ nav ul li {
     transition: all 0.3s ease-in-out;
 }
 
+/* Hamburger Menu Animation */
 .ham-menu.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(9px, 5px);
 }
 
 .ham-menu.active span:nth-child(2) {
@@ -123,10 +104,9 @@ nav ul li {
 }
 
 .ham-menu.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(9px, -5px);
 }
 
-/* Navigation menu hidden by default on mobile */
 .nav-links {
     display: flex;
     flex-direction: row;
@@ -137,7 +117,7 @@ nav ul li {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 65px; /* Below the navbar */
+    top: 65px;
     left: 0;
     width: 100%;
     background-color: rgb(225, 218, 218);
@@ -149,123 +129,88 @@ nav ul li {
     padding: 20px 0;
 }
 
-
-/* Main styling */
-
-
-
-
+/* Main Styling */
 #main {
-    grid-row: 2; /* Set main content to the second row */
     background-color: rgb(171, 171, 171);
-    
     display: flex;
     flex: 1;
     flex-direction: column;
     justify-content: center;
-    
-
-    
 }
 
-
-
-#contentbox
-{
+#contentbox {
     display: flex;
     flex-direction: column;
     color: rgb(51, 51, 51);
-    border: 2px rgb(157, 157, 247) solid;
     width: 85%;
     height: 100%;
     align-self: center;
 }
 
-
-
-
-
-
-
-
-
-
-
 /* Footer Styling */
-
-
-
 #footer {
-    grid-row: 3; /* Set footer to the third row */
     display: flex;
-    background-color: rgb(184, 176, 149);
-    
+    background: rgb(225,218,218);
+    background: linear-gradient(0deg, rgba(225,218,218,1) 0%, rgba(185,176,140,1) 48%); 
 }
 
-#footer a
-{
+#footer a {
     color: rgb(30, 42, 94);
 }
 
-
-
-#footer article {
-    display: flex; 
+#footer article, #footer p {
+    display: flex;
     flex: 1;
-    
     flex-direction: column;
-    align-items: flex-start; /* Left-align content in articles */
-    
+    align-items: flex-start; /* Left-align content */
     padding: 15px;
     justify-content: center;
     align-items: center;
+}
 
-   
-    
+
+
+
+#footer p
+{
+    flex-direction: row;
 }
 
 
 #footer article:nth-child(3) {
     align-items: flex-start;
-
-    
 }
 
-
-
-
-footer img
-{
+footer img {
     height: 17px;
     vertical-align: middle;
 }
 
-footer ul
-{
+footer ul {
     vertical-align: middle;
-    
 }
 
-footer ul li
-{
+footer ul li {
     display: inline;
-    
 }
 
-
-@media (max-width:1200px)
-{
-    footer ul li
-    {
+/* Media Queries */
+@media (max-width: 1200px) {
+    #footer ul li {
         display: block;
 
     }
+
+
+    #footer h3
+
+    #footer p
+    {
+        flex-direction: column;
+    }
 }
 
-
-
-
-@media (max-width: 768px) {
+@media (max-width: 811px) {
     .ham-menu {
         display: flex;
     }
@@ -274,17 +219,4 @@ footer ul li
         display: none;
         width: 100%;
     }
-
-    
 }
-
-
-
-
-/* <a target="_blank" href="https://icons8.com/icon/6Fsj3rv2DCmG/twitterx">TwitterX</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */
-
-
-
-
-
-

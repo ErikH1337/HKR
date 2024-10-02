@@ -1,105 +1,113 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contact - Erik Harr</title>
+<!DOCTYPE html>
+<html lang="en">
 
-        <link rel="stylesheet" href="Styling/stylesheet.css">
-        <link rel="stylesheet" href="Styling/Contact.css">
-    </head>
-    <body>
-        <div class="grid-container">
-            <div class="grid-container">
-                <nav>
-                    <h2> Erik H</h2>
-                    
-                    <!-- Hamburger Menu for mobile -->
-                    <div class="ham-menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Erik Harr</title>
+
+    <link rel="stylesheet" href="Styling/stylesheet.css">
+    <link rel="stylesheet" href="Styling/Contact.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2> Erik H</h2>
+
+        <!-- Hamburger Menu for mobile -->
+        <div class="ham-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links">
+            <li><a href="Home.html" class="hovereffect">HOME</a></li>
+            <li><a href="AboutMe.html" class="hovereffect">ABOUT ME</a></li>
+            <li><a href="Gallery.html" class="hovereffect">GALLERY</a></li>
+            <li><a href="Contact.html" class="hovereffect nav-currentpage">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <main id="main">
+
+        <form action="mailto:eriik.harr@gmail.com" method="post" enctype="text/plain"> <!--post eller get method? -->
+            <h2>Get in touch</h2>
+            <label for="name">Full Name:</label>
+            <input 
+            type="text" 
+            id="fullname" 
+            name="fullname" 
+            placeholder="Your full name..." 
+            required minlength="2"
+            maxlength="50" 
+            pattern="[A-Za-zåäöÅÄÖ\s]++">
+            <br><br>
+
+            <label for="email">Your Email:</label>
+            <input type="email" 
+            id="email" 
+            name="email" 
+            placeholder="Your.email@mail.com">
+            <br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" 
+            name="message" 
+            rows="5" 
+            cols="40" 
+            placeholder="Please write your message here..." 
+            required>
+            </textarea>
+            
+            <br><br>
+
+            <input type="submit" value="Send">
+        </form>
+
+
+    </main>
+
+    <footer id="footer">
         
-                    <!-- Navigation Links -->
-                    <ul class="nav-links">
-                        <li><a href="Home.html" class="hovereffect">HOME</a></li> 
-                        <li><a href="AboutMe.html" class="hovereffect">ABOUT ME</a></li> 
-                        <li><a href="Projects.html" class="hovereffect">PROJECTS</a></li> 
-                        <li><a href="Contact.html" class="hovereffect nav-currentpage">CONTACT</a></li> 
-                    </ul>
-                </nav>
+        <p> &copy;/<time datetime="2024">2024</time> - by Erik H</p>
+        <article>
+            <div>
+                <h3>My Social Media</h3>
+                <ul>
+                    <li><img src="Images/icons8-twitterx-16.svg" alt="New twitter logo"><a href="https://x.com/meNemJeff1337" class="hovereffect">Twitter</a></li>
+                    <li><img src="Images/instagram-logo-8869.svg" alt="Instagram logo" height="10px"><a href="https://www.instagram.com/erik_harr_1337/" class="hovereffect">Instagram</a></li>
+                    <li><img src="Images/facebook-logo-2428.svg" alt="Facebook logo"><a href="https://www.facebook.com/HarrErik?locale=sv_SE" class="hovereffect">Facebook</a></li>
+                    <li><img src="Images/github-logo-6532.svg" alt="Github logo"><a href="https://github.com/ErikH1337" class="hovereffect">Github</a></li>
+                </ul>
+            </div>
+        </article>
+        <article>
+            <h3>Navigate this site</h3>
+            <ul>
+                <li><a href="Home.html" class="hovereffect">Home</a></li>
+                <li><a href="AboutMe.html" class="hovereffect">About</a></li>
+                <li><a href="Gallery.html" class="hovereffect">Gallery</a></li>
+                <li><a href="Contact.html" class="hovereffect">Contact</a></li>
+            </ul>
+        </article>
+    </footer>
 
-            <main id="main">
-                
+
+    <script>
+        const hamMenu = document.querySelector('.ham-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamMenu.addEventListener('click', () => {
+            hamMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    </script>
+    </div>
 
 
+</body>
 
-
-                <form action="mailto:eriik.harr@gmail.com" method="post" enctype="text/plain"> <!--post eller get method? -->
-                    <h2>Get in touch</h2>
-                    <label for="name">Full Name:</label>
-                    <input type="text" 
-                    id="name" 
-                    name="name" 
-                    placeholder="Your full name..." 
-                    required 
-                    minlength="2" 
-                    maxlength="50" 
-                    pattern="[A-Za-zåäöÅÄÖ\s]++" 
-                    >  
-                    <br><br>
-                    <label for="email">Your Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Your.email@mail.com"><br><br>
-                
-                
-                    <label for="message">Message:</label><br>
-                    <textarea id="message" name="message" rows="5" cols="40" placeholder="Please write your message here..." required></textarea><br><br>
-
-                    <input type="submit" value="Send">
-                </form>
-                
-                <!-- Jag vill kanske implementera att placeholder texten går bort en i taget medans man skriver, men det r typ endast bra för personnummer idk 
-                    Max width till texarea u know 
-                -->
-
-            </main>
-
-            <footer id="footer">
-                <article><p>&copy; 2024 by Erik Harr</p>
-                </article>
-                <article>
-                    <div> 
-                        <h3>My Social Media</h3>
-                        <ul>
-                            <li><img src="Images/icons8-twitterx-16.svg" alt="image"><a href="https://x.com/meNemJeff1337" class="hovereffect">Twitter</a></li>
-                            <li><img src="Images/instagram-logo-8869.svg" alt="image" height="10px"><a href="https://www.instagram.com/erik_harr_1337/" class="hovereffect">Instagram</a></li>
-                            <li><img src="Images/facebook-logo-2428.svg" alt=""><a href="https://www.facebook.com/HarrErik?locale=sv_SE" class="hovereffect">Facebook</a></li>
-                            <li><img src="Images/github-logo-6532.svg" alt=""><a href="https://github.com/ErikH1337" class="hovereffect">Github</a></li>
-                        </ul>
-                    </div>
-                </article>
-                <article>
-                    <h3>Navigate this site</h3>
-                    <ul>
-                        <li><a href="Home.html" class="hovereffect">Home</a></li>
-                        <li><a href="AboutMe.html" class="hovereffect">About</a></li>
-                        <li><a href="Projects.html" class="hovereffect">Projects</a></li>
-                        <li><a href="Contact.html" class="hovereffect">Contact</a></li>
-                    </ul>
-                </article>
-            </footer>
-        </div>
-
-        <script>
-            const hamMenu = document.querySelector('.ham-menu');
-            const navLinks = document.querySelector('.nav-links');
-
-            hamMenu.addEventListener('click', () => {
-                hamMenu.classList.toggle('active');
-                navLinks.classList.toggle('active');
-            });
-        </script>
-        </div>
-    </body>
-    </html>
+</html>
