@@ -41,10 +41,6 @@
 .gallary-item img:hover
 {
     transform: scale(1.1); /* Zoom effect on hover */
-
-
-    border-radius: 10px;
-
 }
 
 .description {

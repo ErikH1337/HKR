@@ -65,7 +65,8 @@
 
 #course-journey {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns by default */    gap: 20px;
+    grid-template-columns: repeat(2, 1fr); /* Two columns by default */    
+    gap: 20px;
     padding: 20px;
     align-items: center;
     margin-bottom: 40px;
