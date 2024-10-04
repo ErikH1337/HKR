@@ -26,7 +26,7 @@
 }
 
 .gallary-item {
-    position: relative;
+    position: relative; 
     overflow: hidden;   
 }
 
