@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 7</title>
+</head>
+<body>
+    
+
+    <script>
+        /* task 1*/
+        let num = 42;
+        let strNum = num.toString();
+        console.log(typeof(strNum))
+
+
+        /* task 2*/
+
+        let fruits = ["apple", "orange", "poop"]
+        console.log(fruits[1])
+
+        fruits.push("shit", "piss")
+        console.log(fruits)
+
+        fruits.pop()
+        console.log(fruits)
+
+        console.log(fruits.length)
+        /* task 3*/
+
+        let person = {
+            name: "john doe",
+            age: 30,
+            email: "john.doe@gmail.com"
+        };
+
+        console.log(person)
+
+        /* task 4*/
+
+        const random = Math.random()
+        let tenDividedBy = 10/random
+        console.log(`10 divided by ${random} is ${tenDividedBy}`);
+
+        /* task 5*/
+
+        /*
+        let value1 = prompt("enter the first value");
+        let value2 = prompt("enter the second value");
+        
+        value1 = parseFloat(value1);
+        value2 = parseFloat(value2);
+
+        console.log(`Is ${value1} larger than ${value2}? ${value1 > value2} `)
+        console.log(`Is ${value2} larger than ${value1}? ${value2 > value1}`)
+        */
+
+        /* task 6*/
+
+        // Declare three Boolean variables
+        let bool1 = true;
+        let bool2 = false;
+        let bool3 = true;
+
+        // Perform logical operations and display the results
+        console.log(`bool1 && bool2: ${bool1 && bool2}`); // AND operator
+        console.log(`bool1 || bool2: ${bool1 || bool2}`); // OR operator
+        console.log(`!bool1: ${!bool1}`); // NOT operator
+        console.log(`bool1 && bool3: ${bool1 && bool3}`); // AND with bool1 and bool3
+        console.log(`bool2 || bool3: ${bool2 || bool3}`); // OR with bool2 and bool3
+        console.log(`!(bool1 && bool3): ${!(bool1 && bool3)}`); // NOT of AND
+
+        /* task 7*/
+
+        let counter = 5
+        console.log(counter)
+
+        counter++
+        console.log(counter)
+
+        counter--
+        console.log(counter)
+
+        /* task 8*/
+
+        /*
+        let total = prompt("enter the value number");
+        total = parseFloat(total);
+        try {
+        
+        console.log(total);
+
+        total+=5
+        console.log(total);
+
+        } catch (error) {
+            console.error("An error occurred during the assignment operations:", error.message)
+        }
+        
+        if (!isNaN(total))
+        {
+            console.log(`The total is a number yay`)
+        }
+
+        else{
+            console.log(`The total is not a number. :(`)
+        }
+
+        */
+       
+    </script>
+</body>
+</html>

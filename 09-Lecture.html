@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 9</title>
+</head>
+
+<body>
+    <script>
+        /*Task 1*/
+
+        /*
+
+        let yourname = prompt("enter your name")
+        console.log(greet(yourname))
+
+        function greet(name){
+            alert(`Hello ${name}!`)
+        }
+        */
+
+        /*Task 2*/
+
+        /*
+        let playerPickedRadius = prompt("Enter radius");  // Ask for radius, not area
+        playerPickedRadius = parseFloat(playerPickedRadius);  // Parse it as a float
+
+        let playerPickedArea = calculateCircleArea(playerPickedRadius);  // Calculate area
+        console.log(playerPickedArea);  // Log the area to the console
+
+        function calculateCircleArea(radius) 
+        {
+            if (radius <= 0)   
+            {
+                return "Invalid radius. Please enter a positive number.";  // Validation check
+            }
+            let area = Math.PI * Math.pow(radius, 2);  // Correct formula for the area of a circle
+            return area;
+        }
+
+        
+        const base1 = 10;
+        const height1 = 20;
+        console.log(calculateTriangleArea(base1, height1));
+        
+
+        function calculateTriangleArea(base, height){
+            let triangleArea = (base * height)/2
+            return triangleArea
+        } 
+
+    */
+
+        /*Task 3*/
+        let multiply = function (num1, num2) {
+            return num1 * num2
+        };
+
+        let result = multiply(4, 5)
+
+        /*Task 4*/
+        class Person {
+            constructor(name, age, email) {
+                this.name = name;
+                this.age = age;
+                this.email = email;
+            }
+
+            greet(greetText) {
+                return `${greetText}, ${this.name}!`;
+            }
+        }
+
+        const Erik = new Person("Erik", 19, "erik.harr@gmail.com");
+        console.log(Erik);
+        console.log(Erik.greet("Sup"));
+
+        /* Task 5 */
+
+        class Student extends Person {
+
+            constructor(name, age, email, studentID) {
+                super(name, age, email);  
+                this.studentID = studentID;
+            }
+
+            showStudentInfo() {
+                console.log(`Name: ${this.name}, Age: ${this.age}, Email: ${this.email}, Student ID: ${this.studentID}`);
+            }
+        }
+
+        const studentErik = new Student("Erik", 19, "erik.harr@gmail.com", 123);
+        console.log(studentErik.showStudentInfo());
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 8</title>
+</head>
+<body>
+
+
+
+
+    <script>
+        /*Task 1*/
+
+        /*
+        const age = prompt("What is your age ")
+        age = parseInt(age)
+
+        if(age>= 18) {
+            alert("You are an adult")
+        }
+        else{
+            alert("You are a minor")
+        }
+        */
+        /* Task 2*/
+        let a = 1;
+        let b = 5;
+        let c = 20
+
+        let sorted;
+        if (a > b && a > c) {
+            if (b > c) {
+                sorted = [c, b, a];  // c < b < a
+            } else {
+                sorted = [b, c, a];  // b < c < a
+            }
+        } else if (b > a && b > c) {
+            if (a > c) {
+                sorted = [c, a, b];  // c < a < b
+            } else {
+                sorted = [a, c, b];  // a < c < b
+            }
+        } else {
+            if (a > b) {
+                sorted = [b, a, c];  // b < a < c
+            } else {
+                sorted = [a, b, c];  // a < b < c
+            }
+        }
+    
+        console.log(sorted)
+
+
+
+        
+        
+        /*Task 3*/
+
+
+        let numbers = [2, 4, 6, 8, 10];
+        let squaredNumber = [];
+        for (let i = 0; i < numbers.length; i++)
+        {
+            squaredNumber.push(numbers[i] ** 2)
+
+        }
+
+
+        let maxValue = numbers[0];
+        for (let i = 1; i < numbers.length; i++) {
+        if (numbers[i] > maxValue) {
+            maxValue = numbers[i];
+        }
+        }   
+
+        minValue = numbers[0]
+        for (let i = 1; i < numbers.length; i++) {
+            if(numbers[i] < minValue){
+                minValue = numbers[i];
+            }
+        }
+
+        console.log("Squared Numbers: ", squaredNumber);
+        console.log("Maximum Value: ", maxValue);
+        console.log("Minimum Value: ", minValue);
+        
+
+
+
+
+    
+    </script>
+    
+</body>
+</html>
