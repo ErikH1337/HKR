@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family quiz website</title>
+
+    <link rel="stylesheet" href="ErikHarr.css">
+</head>
+<body>
+    <h1>Welcome, <br> the Harr family </h1>
+    <div id="content-box">
+
+        <form id="quizForm" action="#" method="POST">
+            <h2>Your information:</h2>
+            <small>Obligatory:*</small>
+            <br><br> 
+            
+            <div>
+                <label for="Fname">*First Name:</label>
+                <input 
+                type="text" 
+                id="Fname" 
+                name="Fname" 
+                placeholder="Your first name..." 
+                required 
+                minlength="1"
+                maxlength="50" 
+
+                >
+                <span class="error" id="firstNameError"></span>
+                
+            </div>
+            <!-- pattern="[A-Za-zåäöÅÄÖ\s]+" optional way to validate-->
+
+            <div>
+                <label for="Lname">*Last Name:</label>
+                <input 
+                type="text" 
+                id="Lname" 
+                name="Lname" 
+                placeholder="Your last name..." 
+                required 
+                minlength="1"
+                maxlength="50" 
+                 
+                
+                />
+                <span class="error" id="lastNameError"></span>
+            
+            </div>
+            <br>
+            
+            <div>
+                <label for="email">*Your Email:</label>
+                <input type="email" 
+                id="email" 
+                name="email" 
+                placeholder="Your.email@mail.com"
+                required
+                >
+            </div>
+
+            <!-- -------QUIZ----------------- -->
+
+            <h2>Quiz questions</h2>
+
+            <p>1. What is the capital of France? *</p>
+            <div><small> (single-choice) </small></div>
+
+            <input type="radio" id="paris" name="q1" value="Paris" required>
+            <label for="paris">Paris</label><br>
+
+            <input type="radio" id="london" name="q1" value="London">
+            <label for="london">London</label><br>
+
+            <input type="radio" id="berlin" name="q1" value="Berlin">
+            <label for="berlin">Berlin</label>
+
+            <span class="error" id="q1Error"></span>
+
+            <br><br>
+
+            <p>2. Select the fruits: *</p>
+            <div><small> (multiple-choice) </small></div>
+            <input type="checkbox" id="apple" name="q2" value="Apple">
+            <label for="apple">Apple</label><br>
+
+            <input type="checkbox" id="banana" name="q2" value="Banana">
+            <label for="banana">Banana</label><br>
+
+            <input type="checkbox" id="carrot" name="q2" value="Carrot">
+            <label for="carrot">Carrot</label>
+
+            <span class="error" id="q2Error"></span>
+
+            <br><br>
+
+            <p>3. What is my favorite color?</p>
+            <textarea 
+            id="q3" 
+            name="q3" 
+            placeholder="The best color..."
+            >
+            </textarea>
+
+            <br>
+
+            <p>4. How old is Erik</p>
+            <div><small> (single-choice) </small></div>
+            <input type="radio" id="18" name="q4" value="18" >
+            <label for="18">18</label><br>
+
+            <input type="radio" id="19" name="q4" value="19">
+            <label for="19">19</label><br>
+            
+
+            <input type="radio" id="20" name="q4" value="20">
+            <label for="20">20</label><br>
+
+            <input type="radio" id="21" name="q4" value="21">
+            <label for="21">21</label><br>
+
+            <span class="error" id="q4Error"></span>
+
+
+            <br>
+
+            <p>5. What family members and acquaintances are over 30? *</p>
+            <div><small>(multiple-choice)</small></div>
+
+            <input type="checkbox" id="johan" name="q5" value="Johan">
+            <label for="johan">Johan</label><br>
+
+            <input type="checkbox" id="rickard" name="q5" value="Rickard">
+            <label for="rickard">Rickard</label><br>
+
+            <input type="checkbox" id="erik" name="q5" value="Erik">
+            <label for="erik">Erik</label><br>
+
+            <input type="checkbox" id="uc" name="q5" value="UC">
+            <label for="uc">UC</label><br>
+
+            <input type="checkbox" id="robert" name="q5" value="Robert">
+            <label for="robert">Robert</label><br>
+
+            <input type="checkbox" id="mak" name="q5" value="Mak">
+            <label for="mak">Mak</label><br>
+
+            <input type="checkbox" id="oscar" name="q5" value="Oscar">
+            <label for="oscar">Oscar</label>
+
+            <br>
+            <span class="error" id="q5Error"></span>
+
+            <br><br>
+
+
+            <div id="scoreDisplay"></div>
+            <br>
+            <button type="submit">Submit Quiz</button>
+
+        </form>   
+    </div>
+            
+    <script src="ErikHarr.js" defer></script> 
+
+
+    <!-- Question id 
+    what is my favorite color
+
+    
+    -->
+</body>
+</html>

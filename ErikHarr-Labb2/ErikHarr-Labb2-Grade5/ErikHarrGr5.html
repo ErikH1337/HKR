@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Your Own Quiz - Erik Harr</title>
+    <link rel="stylesheet" href="ErikHarrGr5.css">
+</head>
+<body>
+    <h1>Create Your Quiz</h1>
+    
+    <div id="content-box">
+        <form id="newQuestionForm" onsubmit="saveQuestion(event)">
+            <label for="questionText">Question:</label>
+            <textarea id="questionText" name="questionText" required></textarea>
+            
+            <label>Answer Type:</label>
+            <select id="answerType" onchange="handleAnswerTypeChange()">
+                <option value="text">Textbox</option>
+                <option value="radio">Single Choice (Radio)</option>
+                <option value="checkbox">Multiple Choice (Checkbox)</option>
+            </select>
+            
+            <div id="answerContainer"></div> <!-- Will hold answer inputs dynamically -->
+            
+            <button type="submit">Save Question</button>
+        </form>
+    </div>
+    
+    <h2>Your current quiz:</h2>
+    <hr>
+    <div id="quizContainer"></div>
+    <div id="scoreContainer"></div> <!-- New element to show the latest score -->
+    <button id="startQuizButton" onclick="startQuiz()">Start Quiz</button>
+    
+    <script src="ErikHarrGr5.js" defer></script>
+</body>
+</html>

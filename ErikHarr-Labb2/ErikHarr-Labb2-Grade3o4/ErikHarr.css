@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none; /* Removes marker under hyperlinks */
+    box-sizing: border-box;
+    font-family: monospace, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Web safe font */
+    list-style-type: none; /* Removes bullets */
+    scroll-behavior: smooth;
+}
+
+/* Body Styling */
+body {
+    background: rgb(225, 218, 218); /* Extends the navbar background when scrolling */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Typography */
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 3vw, 1.875rem);
+}
+
+h3 {
+    font-size: clamp(1.25rem, 2.5vw, 1.45rem);
+}
+
+p {
+    color: black;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+#content-box
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(51, 51, 51);
+    height: 100%;
+    width: 45%;
+}
+
+
+form {
+    width: 100%;
+    
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    border: 1px solid #fdc482;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"], input[type="email"], textarea 
+{
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border-radius: 5px;
+    border: 1px solid #fdc482;
+}
+
+input[type="text"]:focus,input[type="email"]:focus, textarea:focus {
+    outline: 2px rgb(231, 148, 85) solid; 
+    border: none;
+}
+
+input[type="submit"] 
+{
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover 
+{
+    background-color: #45a049;
+}
+
+.error
+{
+    color: red;
+}
+
+
+@media (max-width: 850px)
+{
+    #content-box{
+        width: 90%;
+    }
+}
+
+
+

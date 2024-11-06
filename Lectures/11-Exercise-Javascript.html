@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="activityList"></p>
+    <button id="activityUppdate">Uppdate activity list</button>
+
+
+
+    <script>
+        class activity{
+            constructor(name, duration, excitementLvl, location, description){
+                this.name = name;;
+                this.duration = duration;
+                this.excitementLvl = excitementLvl;
+                if (excitementLvl > 10 || excitementLvl < 1)
+                    {
+                        alert("Excitement level must be between 1 and 10")
+                    }
+                this.location = location;
+                this.description = description;
+            }
+        }
+
+        let activities = [];
+
+        // Add, edit, delete
+        function addActivity(name, duration, excitementLvl, location, description){
+            const newActivity = new activity(name, duration, excitementLvl, location, description);
+            activities.push(newActivity)
+            console.log(`${newActivity.name} has been added!`)
+        }
+
+        function editAcivity(name, duration, excitementLvl, location, description){
+            for(let i = 0; i > activities.length; i++)
+            {
+                if(activities[i].name === name) 
+                {
+                    activities[i].duration === duration;
+                    activities[i].excitementLvl === excitementLvl;
+                    activities[i].location === location;
+                    activities[i].description === description;
+
+                }
+            }
+        }
+
+        function deleteActivity(name, duration, excitementLvl, location, description){
+            for(let i = 0; i > activities.length; i++)
+            {
+                if(activities[i].name === name) 
+                {
+                    activities.splice(i, 1)
+                }
+            }
+        }
+
+        function listActivities() {
+        if (activities.length > 0) {
+            for (let i = 0; i < activities.length; i++) {
+                console.log(`
+                    Name: ${activities[i].name}
+                    Duration: ${activities[i].duration} hours
+                    Excitement Level: ${activities[i].excitementLevel}/10
+                    Location: ${activities[i].location}
+                    Description: ${activities[i].description}
+                `
+            );
+            }
+            } 
+            else {
+                console.log("No activities available.");
+            }
+        }
+
+        //
+
+    function showMenu() {
+        console.log(`
+        Choose an option:
+        1. Add Activity
+        2. Edit Activity
+        3. Delete Activity
+        4. List Activities
+        5. Exit
+    `);
+
+    const choice = prompt("Enter your choice: ");
+    handleUserChoice(choice);
+}
+
+    function handleUserChoice(choice) {
+        switch (choice) {
+            case "1":
+                const name = prompt("Enter activity name: ");
+                const duration = prompt("Enter duration in hours: ");
+                const excitementLevel = prompt("Enter excitement level (1-10): ");
+                const location = prompt("Enter location: ");
+                const description = prompt("Enter description: ");
+                addActivity(name, duration, excitementLevel, location, description);
+                break;
+            case "2":
+                const editName = prompt("Enter the name of the activity to edit: ");
+                const newName = prompt("Enter new name (or press Enter to keep the current name): ");
+                const newDuration = prompt("Enter new duration (or press Enter to keep the current duration): ");
+                const newExcitementLevel = prompt("Enter new excitement level (or press Enter to keep the current level): ");
+                const newLocation = prompt("Enter new location (or press Enter to keep the current location): ");
+                const newDescription = prompt("Enter new description (or press Enter to keep the current description): ");
+                editActivity(editName, { name: newName, duration: newDuration, excitementLevel: newExcitementLevel, location: newLocation, description: newDescription });
+                break;
+            case "3":
+                const deleteName = prompt("Enter the name of the activity to delete: ");
+                deleteActivity(deleteName);
+                break;
+            case "4":
+                listActivities();
+                break;
+            case "5":
+                console.log("Exiting...");
+                break;
+            default:
+                console.log("Invalid choice. Please try again.");
+                showMenu();
+        }
+    }
+
+    showMenu();
+
+        /*
+        let activityList = document.getElementById("activityList");
+        const activityUppdate = document.getElementById("activityUppdate")
+        activityUppdate.addEventListener("click", function() {
+            uppdateActivity()
+        })
+
+        uppdateActivity()
+        {
+            for(let i = 0; i < activities.length; i++)
+            {
+                activityList.innerHTML += activities[i]
+            }
+        }
+
+
+
+        const hike = new activity(
+            "Mountain Hiking", 
+            4, 
+            9, 
+            "Rocky Mountain Trail", 
+            "Experience the thrill of reaching new heights with stunning views of the surrounding landscapes. A refreshing challenge for adventurers."
+        );
+
+        const webmarathon = new activity(
+            "Web Development Marathon", 
+            6, 
+            8, 
+            "Home Office", 
+            "Dive deep into coding, building cool projects, and honing web development skills. A perfect day for someone passionate about creating websites!"
+        );
+
+
+
+        let activities = [hike, webmarathon]
+        function addActivity(name, duration, excitementLvl, location, description) {
+            const newActivity = new activity(name, duration, excitementLvl, location, description);
+            activities.push(newActivity)
+            console.log(`${newActivity} has been added!`)
+        }
+
+        function editAcivity(name, duration, excitementLvl, location, description){
+            for(let i = 0; i < activities.length; i++){
+                if (name === activities[i].name){
+                    activities[i].duration = duration
+                    activities[i].excitementLvl = excitementLvl
+                    activities[i].location = location
+                    activities[i].description = description
+                    console.log(`${name} has been updated!`)
+                    return
+                }
+            }
+        }
+        function deleteActivity (name){
+            for(let i = 0; i < activities.length; i++)
+            {
+                if (name === activities[i].name)
+                {
+                    activities.splice(i, 1)
+                    console.log(`${name} has been deleted!`);
+                    return;  // Exit the function after deleting
+                }
+            }
+        }
+
+        function listActivities(){
+            for(let i = 0; i < activities.length; i++)
+            {
+                console.log(`${activities[i]} exists!`)
+            }
+        }
+            
+        */
+   
+    </script>
+</body>
+</html>

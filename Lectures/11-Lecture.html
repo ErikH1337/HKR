@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        //task 1
+        const personObj = 
+        {
+            name: "John Doe",
+            age: 30,
+            email: "johndoe@example.com"
+        };
+
+    // Step 2: Convert the JavaScript object to a JSON string
+    const personJSON = JSON.stringify(personObj);
+
+    console.log("JSON object representation of person:");
+    console.log(personJSON);
+
+    parsedJSONobj = JSON.parse("personJSON")
+
+
+    // task 2
+    function simulateAsyncOperation() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("Operation completed."); 
+            }, 2000);
+        });
+    }
+
+    simulateAsyncOperation().then((message) => {
+        console.log(message); // 
+    });
+
+    </script>
+</body>
+</html>

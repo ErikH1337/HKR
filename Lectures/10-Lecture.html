@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 10</title>
+</head>
+<body>
+
+    <button id="myButton">
+        Click to add number
+    </button>
+    <p>Number counter: <span id="displayCount">0</span></p>
+
+    <br>
+
+    <input type="text" id="inputField" placeholder="Type something...">
+    <div>Text counter: <span id="displayDiv"></span></div>
+
+    <br>
+
+    <form id="form3">
+        <label for="name">Enter your name</label>
+        <input type="text" id="name3" required>
+        <button type="submit" id="submitButton3">Submit</button>
+    </form>
+
+    <br>
+
+    <div id="hoverDiv">Hejsan</div>
+
+    <script>
+        //Task 1
+        let count = 0;
+
+        const button = document.getElementById("myButton")
+        const displayCount = document.getElementById("displayCount")
+        
+
+        button.addEventListener('click', function(){
+            count++;
+            displayCount.textContent = count;
+            
+        });
+
+        
+        //Task 2
+        const inputField = document.getElementById("inputField")
+        const displayDiv = document.getElementById("displayDiv")
+        
+        inputField.addEventListener('keyup', function(){
+            const text = inputField.value;
+            const textCount = text.length;
+            displayDiv.textContent = textCount;
+        })
+
+        // Task 3
+        const form3 = document.getElementById("form3")
+        const name3 = document.getElementById("name3");
+        const submitButton3 = document.getElementById("submitButton3")
+
+        form3.addEventListener("submit", function(event){
+            event.preventDefault() 
+            alert("Form submitten yo")
+        })
+
+        //Task 4 
+        const hoverDiv = document.getElementById('hoverDiv');
+        hoverDiv.addEventListener("mouseover", function(){
+            hoverDiv.style.color = "red"
+        })
+
+
+    </script>
+    
+</body>
+</html>

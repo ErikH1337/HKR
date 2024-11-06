@@ -94,6 +94,26 @@
         const studentErik = new Student("Erik", 19, "erik.harr@gmail.com", 123);
         console.log(studentErik.showStudentInfo());
 
+        /* Task 6 */
+        let numbers = [2, 4, 6, 8, 10];
+
+        let squaredNumbers =  numbers.map((x) => Math.sqrt(x))
+        console.log(squaredNumbers)
+
+
+        let totalsum = numbers.reduce((total, number) => {
+            return total + number;
+        }, 0)
+        console.log(`Total sum: ${totalsum}`);
+        // https://www.youtube.com/watch?v=s1XVfm5mIuU Reduce method
+
+
+        let maxValue = Math.max(...numbers);
+        console.log(`Max value: ${maxValue}`)
+
+
+        let minValue = Math.min(...numbers)
+        console.log(`Min value: ${minValue}`)
     </script>
 
 </body>
