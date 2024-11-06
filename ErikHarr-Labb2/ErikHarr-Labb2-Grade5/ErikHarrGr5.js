@@ -1,16 +1,16 @@
-// Array to store all quiz questions
+// Stores quiz questions (loaded from localStorage)
 const questions = JSON.parse(localStorage.getItem("quizQuestions")) || [];
 
-// Render questions in quiz creation container
+// Renders the current quiz questions
 function renderQuizContainer() {
     const quizContainer = document.getElementById("quizContainer");
-    quizContainer.innerHTML = ""; // Clear previous entries
+    quizContainer.innerHTML = "";
 
-    // Synchronize with localStorage
-    const storedQuestions = JSON.parse(localStorage.getItem("quizQuestions")) || [];
+    // Update local array from localStorage
     questions.length = 0;
-    questions.push(...storedQuestions);
+    questions.push(...(JSON.parse(localStorage.getItem("quizQuestions")) || []));
 
+    // Display each question with delete option
     questions.forEach((question, index) => {
         const questionDiv = document.createElement("div");
         questionDiv.classList.add("quizQuestion");
@@ -19,36 +19,38 @@ function renderQuizContainer() {
         questionText.innerText = `${index + 1}. ${question.text}`;
         questionDiv.appendChild(questionText);
 
+        // List each answer
         question.answers.forEach(answer => {
             const answerText = document.createElement("p");
             answerText.innerText = `Answer: ${answer.text} - ${answer.correct ? "Correct" : "Incorrect"}`;
             questionDiv.appendChild(answerText);
         });
 
-        // Create delete button
+        // Add delete button
         const deleteButton = document.createElement("button");
         deleteButton.innerText = "Delete Question";
-        deleteButton.onclick = () => deleteQuestion(index); // Call delete function
+        deleteButton.onclick = () => deleteQuestion(index);
         questionDiv.appendChild(deleteButton);
 
         quizContainer.appendChild(questionDiv);
     });
 }
 
-// Delete question function
+// Deletes a question by index
 function deleteQuestion(index) {
-    questions.splice(index, 1); // Remove question at the specified index
-    localStorage.setItem("quizQuestions", JSON.stringify(questions)); // Update local storage
-    renderQuizContainer(); // Re-render the container to reflect changes
+    questions.splice(index, 1);
+    localStorage.setItem("quizQuestions", JSON.stringify(questions));
+    renderQuizContainer();
 }
 
-// Handle answer type selection to display correct input fields
+// Handles answer type changes to display relevant input fields
 function handleAnswerTypeChange() {
     const answerContainer = document.getElementById("answerContainer");
-    answerContainer.innerHTML = ""; // Clear previous inputs
+    answerContainer.innerHTML = "";
     const answerType = document.getElementById("answerType").value;
 
     if (answerType === "text") {
+        // Text answer input
         const textAnswerInput = document.createElement("input");
         textAnswerInput.type = "text";
         textAnswerInput.placeholder = "Correct answer for textbox";
@@ -56,6 +58,7 @@ function handleAnswerTypeChange() {
         textAnswerInput.required = true;
         answerContainer.appendChild(textAnswerInput);
     } else {
+        // Add button to create new answer inputs for radio/checkbox
         const addAnswerButton = document.createElement("button");
         addAnswerButton.type = "button";
         addAnswerButton.innerText = "Add Answer";
@@ -64,7 +67,7 @@ function handleAnswerTypeChange() {
     }
 }
 
-// Add a new answer field for multiple-choice or radio answers
+// Adds an answer input field based on selected type
 function addAnswer() {
     const answerContainer = document.getElementById("answerContainer");
     const answerType = document.getElementById("answerType").value;
@@ -72,17 +75,19 @@ function addAnswer() {
     const answerDiv = document.createElement("div");
     answerDiv.classList.add("answerInput");
 
+    // Basic input field
     const answerInput = document.createElement("input");
     answerInput.type = "text";
     answerInput.name = "answer";
     answerInput.placeholder = "Answer text";
     answerInput.required = true;
 
+    // Checkbox/radio for marking correct answers
     const correctCheckbox = document.createElement("input");
     correctCheckbox.type = answerType === "radio" ? "radio" : "checkbox";
     correctCheckbox.name = answerType === "radio" ? "correctAnswerRadio" : "correctAnswer";
-    correctCheckbox.title = "Mark as correct";
 
+    // Remove button for each answer
     const removeButton = document.createElement("button");
     removeButton.type = "button";
     removeButton.innerText = "Remove Answer";
@@ -94,20 +99,22 @@ function addAnswer() {
     answerContainer.appendChild(answerDiv);
 }
 
-// Save question to the questions array and local storage
+// Saves question and answer details to localStorage
 function saveQuestion(event) {
     event.preventDefault();
 
     const questionText = document.getElementById("questionText").value.trim();
     const answerType = document.getElementById("answerType").value;
 
-    if (!questionText) { //question validation
+    // Require a question
+    if (!questionText) {
         alert("Please enter a question.");
         return;
     }
 
     let answers = [];
     if (answerType === "text") {
+        // Handles textbox answer type
         const correctAnswerInput = document.querySelector("input[name='correctAnswer']");
         const correctAnswer = correctAnswerInput ? correctAnswerInput.value.trim() : "";
 
@@ -118,37 +125,34 @@ function saveQuestion(event) {
             return;
         }
     } else {
+        // Map answers from input fields for radio/checkbox
         answers = Array.from(document.querySelectorAll("#answerContainer .answerInput"))
             .map(answerDiv => {
                 const text = answerDiv.querySelector("input[name='answer']").value.trim();
                 const correct = answerDiv.querySelector(answerType === "radio" ? "input[type='radio']" : "input[type='checkbox']").checked;
                 return text ? { text, correct } : null;
             })
-            .filter(Boolean); // Only keeps non-null answers
+            .filter(Boolean); // Only keeps valid answers
     }
 
-    const questionObj = {
-        text: questionText,
-        type: answerType,
-        answers: answers
-    };
-
+    // Save to questions array and local storage
+    const questionObj = { text: questionText, type: answerType, answers: answers };
     questions.push(questionObj);
     localStorage.setItem("quizQuestions", JSON.stringify(questions));
     renderQuizContainer();
     resetQuestionForm();
 }
 
-// Reset form and render default answer options
+// Resets form inputs and re-displays answer options based on default type
 function resetQuestionForm() {
     document.getElementById("newQuestionForm").reset();
-    handleAnswerTypeChange(); // Render answer options based on default answer type
+    handleAnswerTypeChange();
 }
 
-// Start the quiz by displaying each question in quiz mode
+// Starts the quiz display mode
 function startQuiz() {
     const quizContainer = document.getElementById("quizContainer");
-    quizContainer.innerHTML = ""; // Clear previous entries for quiz mode
+    quizContainer.innerHTML = "";
 
     questions.forEach((question, index) => {
         const questionDiv = document.createElement("div");
@@ -189,7 +193,7 @@ function startQuiz() {
     quizContainer.appendChild(submitButton);
 }
 
-// Evaluate quiz answers and display the score
+// Checks answers and calculates score
 function evaluateQuiz() {
     let score = 0;
 
@@ -203,16 +207,21 @@ function evaluateQuiz() {
             const selectedAnswers = Array.from(document.querySelectorAll(`input[type='${question.type}'][name='question-${index}']:checked`));
             const correctAnswers = question.answers.filter(ans => ans.correct).map(ans => ans.text);
             const userAnswers = selectedAnswers.map(input => input.value);
-
-            if (correctAnswers.length === userAnswers.length && correctAnswers.every(ans => userAnswers.includes(ans))) {
+            // Check if user's answers match correct answers (order doesn't matter)
+            if (correctAnswers.every(ans => userAnswers.includes(ans))) {
                 score++;
             }
         }
     });
 
+    // Display the score
     const scoreContainer = document.getElementById("scoreContainer");
-    scoreContainer.innerHTML = `Your score: ${score} out of ${questions.length}`;
+    scoreContainer.innerHTML = `You scored ${score} out of ${questions.length}.`;
 }
 
-renderQuizContainer();
-handleAnswerTypeChange();
+// Initial render of questions saved in localStorage
+document.addEventListener("DOMContentLoaded", () => {
+    renderQuizContainer();
+    handleAnswerTypeChange(); // Sets initial answer type display
+});
+

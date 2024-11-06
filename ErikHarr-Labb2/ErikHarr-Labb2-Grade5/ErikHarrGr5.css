@@ -72,7 +72,7 @@ input[type="text"], input[type="email"], textarea
 }
 
 input[type="text"]:focus,input[type="email"]:focus, textarea:focus {
-    outline: 2px rgb(87, 231, 85) solid; 
+    outline: 2px rgb(231, 148, 85) solid; 
     border: none;
 }
 

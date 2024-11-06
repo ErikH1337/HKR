@@ -74,7 +74,7 @@ document.getElementById("quizForm").addEventListener("submit", function(event) {
 
   // Question 4 Validation (single-choice)
     const q4 = document.querySelector('input[name="q4"]:checked');
-    if (q4) {  // Only evaluate if an answer is selected
+    if (q4) {  // evaluate IF an answer is selected
         if (q4.value === "19") {
             score++;
         }
