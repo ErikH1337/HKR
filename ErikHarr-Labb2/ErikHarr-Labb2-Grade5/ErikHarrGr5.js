@@ -39,11 +39,14 @@ function renderQuizContainer() {
 
 // Deletes a question by index
 function deleteQuestion(index) {
+    var confirmDelete = confirm("Are you sure you want to delete this item?");
+    if (confirmDelete) 
+    {
+        questions.splice(index, 1);
+        localStorage.setItem("quizQuestions", JSON.stringify(questions));
+        renderQuizContainer();
+    }
     
-
-    questions.splice(index, 1);
-    localStorage.setItem("quizQuestions", JSON.stringify(questions));
-    renderQuizContainer();
 }
 
 // Handles answer type changes to display relevant input fields
