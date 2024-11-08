@@ -30,6 +30,7 @@ function renderQuizContainer() {
         const deleteButton = document.createElement("button");
         deleteButton.innerText = "Delete Question";
         deleteButton.onclick = () => deleteQuestion(index);
+
         questionDiv.appendChild(deleteButton);
 
         quizContainer.appendChild(questionDiv);
@@ -38,6 +39,8 @@ function renderQuizContainer() {
 
 // Deletes a question by index
 function deleteQuestion(index) {
+    
+
     questions.splice(index, 1);
     localStorage.setItem("quizQuestions", JSON.stringify(questions));
     renderQuizContainer();
